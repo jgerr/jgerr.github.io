@@ -1,1 +1,0 @@
-Welcome to J. Gerr's site.
