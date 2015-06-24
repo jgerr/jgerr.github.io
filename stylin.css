@@ -6,7 +6,9 @@ a:visited{color:#909090}
 a:hover{color:#FF5050}
 a:active{}
 .sidebar{font-size:18px;}
+.subbar{font-size:12px;}
 .crop{position: relative; width:100%; height:30%; overflow: hidden}
+.cell{width:100%}
 .itemimg{width:100%; position:absolute; top:50%; transform: translate(0,-48%); opacity:1; transition: opacity .5s ease-in-out; -moz-transition: opacity .5s ease-in-out; -webkit-transition: opacity .5s ease-in-out;}
 .itemimg:hover{opacity:0.7}
 .invis{color:#FFFFFF; border:0}
