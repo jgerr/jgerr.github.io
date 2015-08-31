@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<title>Pause!</title>
+		<style>
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	overflow: hidden;
+	color: #888;
+}
+#display{
+	width: 560px;
+	padding:20px;
+	margin:0 auto;
+	text-align: left;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	vertical-align: middle;
+	/* background-color:#ddd;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px; */
+}
+
+#vID{
+	width:25%;
+	height: 24px;
+	color: #444;
+}
+.balloon{
+	position: absolute;
+	top: 100%;
+	left: 10%;
+	z-index:5;
+}
+#video{
+	pointer-events: none;
+	border: 0px;
+	box-shadow: 0px 0px 16px #bbb;
+}
+		</style>
+	</head>
+	<body>
+		<img src="1.gif" class=balloon alt="Click me!" id=ball>
+		<div id=display> 
+			<iframe id=video width="560" height="315" src="http://www.youtube.com/embed/-ZOiX6cIT8o?autoplay=1&controls=0&loop=1&enablejsapi=1&html5=1"> </iframe><br>
+			<p>Pop the balloons to resume playing the video!</p>
+			Video ID: <input type="text" id=vID onchange="load();"> 
+		</div>
+		<script>
+var curBal = 0;//setInterval(balloon, 50);
+var rand = setInterval(random, 1000);
+var ball = document.getElementById("ball");
+var vID = document.getElementById('vID');
+var video = document.getElementById('video');
+var counter = 100;
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player;
+
+function onYouTubeIframeAPIReady() {
+	//alert("ckd");
+	player = new YT.Player('video', {
+    events: {
+		'onReady': onPlayerReady
+    }
+  });
+}
+function onPlayerReady(event) {
+	var butt = document.getElementById("ball");
+	butt.addEventListener("click", function() {
+		player.playVideo();
+		clearInterval(curBal);
+		curBal = 0;
+		counter = 100;
+		$( "#ball" ).fadeOut();
+		setTimeout(function(){style.visibility = 'hidden'}, 1000);//style.visibility = 'hidden';
+	});
+}
+function random(){
+	if (curBal==0){
+		var kek = Math.random();
+		if (kek<0.1){
+			player.pauseVideo();
+			var left = Math.floor(Math.random()*80)+10;
+			ball.style.left = left+"%";
+			curBal = setInterval(balloon, 50);
+		}
+	}
+}
+function balloon(){
+	if (counter>0){counter-=2;}
+	ball.style.top = counter+"%";
+	$( "#ball" ).show();
+//	ball.style.visibility = 'visible';
+//	if (ball.style.visibility!="visible"){ball.style.visibility = 'visible';}
+}
+function load(){
+	if (curBal==0)
+		video.src = "http://www.youtube.com/embed/" + vID.value + "?autoplay=1&controls=0&loop=1&enablejsapi=1&html5=1";
+	else
+		video.src = "http://www.youtube.com/embed/" + vID.value + "?autoplay=0&controls=0&loop=1&enablejsapi=1&html5=1";
+}
+		</script>
+	</body>
+</html>
