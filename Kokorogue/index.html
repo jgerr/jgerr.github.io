@@ -23,15 +23,16 @@
 		}
 		#kokoro{
 			z-index:20;
+			max-width: 100%;
 			position:absolute;
-			max-width: 40%;
-			top: 50%;
-			left: 50%;
-			-webkit-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
 		}
 		#kokoroR{
 			z-index:15;
+			max-width: 100%;
+			position:relative;
+		}
+		#kokoroDiv{
+			z-index:20;
 			position:absolute;
 			max-width: 40%;
 			top: 50%;
@@ -112,13 +113,32 @@ function fadeIn(id){
 	if (ekg.src!='ekg.gif')
 		ekg.src = 'ekg.gif';
 }
+/*
+function fadeIn(id){
+    var element = gelm(id);
+  	if (gelm('kokoroR').className == ''){
+		element.className = 'animated fadeIn';        
+		window.setTimeout( function(){
+			element.style.opacity = 1;
+		}, 1000);
+	} else {
+		window.setTimeout( function(){
+			element.className = 'animated fadeIn';        
+			window.setTimeout( function(){
+				element.style.opacity = 1;
+			}, 1000);
+		}, 750);
+	}
+	if (ekg.src!='ekg.gif')
+		ekg.src = 'ekg.gif';
+}*/
 //onmouseover="addInf('kokoro', 'pulse');" onmouseout="removeInf('kokoro', 'pulse')" onclick="addOnce('kokoro', 'flash');"
 
 </script>
-
-<img id="kokoro"src="kokorogueBW.png" onmouseover="fadeOut('kokoro');" onmouseout="fadeIn('kokoro');" onclick="addOnce('kokoroR', 'pulse');"></img>
+<div id="kokoroDiv"> <div id="variableWidth">
+<img id="kokoro"src="kokorogueBW.png" onmouseover="fadeOut('kokoro');" onmouseout="fadeIn('kokoro');" onclick="addOnce('variableWidth', 'pulse');"></img>
 <img id="kokoroR"src="kokorogueRED.png" ></img>
-
+</div></div>
 <!--<img src="kokorogueBWInverse.png" width=40%></img>-->
 
 <img id="ekg" src="ekg.gif"></img>
