@@ -1,0 +1,147 @@
+<html>
+<head>
+	<title> KOKOROGUE </title>
+
+	<!-- for FF, Chrome, Opera -->
+	<link rel="icon" type="image/png" href="Kokorogue/kokorogueBWSquare.png">
+	<link rel="icon" type="image/png" href="Kokorogue/kokorogueBWSquare.png">
+	<link rel="stylesheet" href="Kokorogue/animate.css">
+	<link href="https://fonts.googleapis.com/css?family=Sacramento|Chewy|Fredoka+One" rel="stylesheet" type="text/css">
+	<!-- for IE
+	<link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico" >
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/favicons/favicon.ico"/> -->
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			font-family: 'Fredoka One', cursive;
+			font-size: 6em;
+			overflow: hidden;
+			text-align: center;
+		}
+		#kokoro{
+			z-index:20;
+			max-width: 100%;
+			position:absolute;
+		}
+		#kokoroR{
+			z-index:15;
+			max-width: 100%;
+			position:relative;
+		}
+		#kokoroDiv{
+			z-index:20;
+			position:absolute;
+			max-width: 40%;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		#ekg{
+			z-index:10;
+			position:absolute;
+			max-width: 100%;
+			height: auto;
+			top: 50%;
+			left: 0%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		<!--#ekg{
+			z-index:20
+			position:absolute;
+			width: 100%;
+			height: auto;
+			top: 50%;
+			-webkit-transform: translate(0, -50%);
+			transform: translate(0%, -50%);
+		} flush against the top !! red would make a nice loading bar i think.... mmm-->
+	</style>
+</head>
+
+<body onload="init();">
+<script>   
+var ekg;
+function gelm(id){
+	return document.getElementById(id);
+}
+
+function init(){
+	ekg = gelm('ekg');
+}
+
+function addOnce(id, animation){ //good for clicks
+    var element = gelm(id);
+    if (element.className == ''){
+		element.className = 'animated ' + animation;        
+		window.setTimeout( function(){
+			element.className = '';
+		}, 1000);
+	}
+	if (ekg.src!='Kokorogue/ekgout.gif')
+		ekg.src = 'Kokorogue/ekgout.gif';
+};
+function addInf(id, animation){ //good for hover
+    var element = gelm(id);
+    if (element.className == ''){
+		element.className = 'infinite animated ' + animation;        
+	}
+};
+
+function removeInf(id, animation){
+	var element = gelm(id);
+	element.className = '';
+}
+
+function fadeOut(id){
+    var element = gelm(id);
+  	element.className = 'animated fadeOut';        
+	window.setTimeout( function(){
+		element.style.opacity = 0;
+	}, 1000);
+}
+
+function fadeIn(id){
+    var element = gelm(id);
+  	element.className = 'animated fadeIn';        
+	window.setTimeout( function(){
+		element.style.opacity = 1;
+	}, 1000);
+	if (ekg.src!='Kokorogue/ekg.gif')
+		ekg.src = 'Kokorogue/ekg.gif';
+}
+/*
+function fadeIn(id){
+    var element = gelm(id);
+  	if (gelm('kokoroR').className == ''){
+		element.className = 'animated fadeIn';        
+		window.setTimeout( function(){
+			element.style.opacity = 1;
+		}, 1000);
+	} else {
+		window.setTimeout( function(){
+			element.className = 'animated fadeIn';        
+			window.setTimeout( function(){
+				element.style.opacity = 1;
+			}, 1000);
+		}, 750);
+	}
+	if (ekg.src!='ekg.gif')
+		ekg.src = 'ekg.gif';
+}*/
+//onmouseover="addInf('kokoro', 'pulse');" onmouseout="removeInf('kokoro', 'pulse')" onclick="addOnce('kokoro', 'flash');"
+
+</script>
+<div id="kokoroDiv"> <div id="variableWidth">
+<img id="kokoro"src="Kokorogue/kokorogueBW.png" onmouseover="fadeOut('kokoro');" onmouseout="fadeIn('kokoro');" onclick="addOnce('variableWidth', 'pulse');"></img>
+<img id="kokoroR"src="Kokorogue/kokorogueRED.png" ></img>
+</div></div>
+<!--<img src="kokorogueBWInverse.png" width=40%></img>-->
+
+<img id="ekg" src="Kokorogue/ekg.gif"></img>
+
+</body>
+</html>
