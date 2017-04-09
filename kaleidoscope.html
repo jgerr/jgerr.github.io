@@ -1,0 +1,94 @@
+<!--(c) Joanna Gerr-->
+<html>
+	<head>
+		<title>Kaleidoscope</title>
+<style>
+.cvs{
+	padding: 0;
+    margin: auto;
+    display: block;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;}
+#lay0{
+	z-index:0;}
+#lay1{
+	z-index:1;}
+</style>
+	</head>
+	<body>
+	<div id=display>
+		<canvas class=cvs id=lay0 width=400 height=400></canvas>	
+		<canvas class=cvs id=lay1 width=400 height=400></canvas>	
+	</div>
+<script> //first amoebas, then reflection
+var dim = 400;
+var size = 8;
+var counter = 0;
+var kaleido = document.getElementById("lay0");
+var ctxK = kaleido.getContext("2d");
+var scope = document.getElementById("lay1");
+var ctxS = scope.getContext("2d");
+var array = []; //just q1
+init();
+window.setInterval(animate,80);
+function init(){
+	/*ctxK.fillStyle = "#FF0000";
+	ctxK.fillRect(dim/2-2,dim/2-2,4,4);
+	ctxS.fillStyle = "#FF0000";
+	ctxS.fillRect(dim/2-2,dim/2-2,4,4);*/
+	ctxS.fillStyle = "#FFFFFF";
+	ctxS.fillRect(0,0,dim,dim);
+	ctxS.beginPath();
+	ctxS.arc(dim/2,dim/2,dim/2,0,2*Math.PI);
+	ctxS.clip();
+	ctxS.clearRect(0,0,dim,dim);
+}
+function reflect(x){
+	ctxK.fillRect(x[0],x[1],x[2],x[3]);
+	ctxK.fillRect(x[1],x[0],x[3],x[2]);
+	ctxK.fillRect(dim-x[0]-8,dim-x[1]-8,x[2],x[3]);
+	ctxK.fillRect(dim-x[1]-8,dim-x[0]-8,x[3],x[2]);
+	ctxK.fillRect(dim-x[0]-8,x[1],x[2],x[3]);
+	ctxK.fillRect(dim-x[1]-8,x[0],x[3],x[2]);
+	ctxK.fillRect(x[0],dim-x[1]-8,x[2],x[3]);
+	ctxK.fillRect(x[1],dim-x[0]-8,x[3],x[2]);
+}
+function randInt(min, max){ //inc, ex
+	return Math.floor(Math.random()*(max-min))+min;
+}
+function randColor(){
+	var hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+	str = "#";
+	for (var i=0; i<3; i++){
+		str+=hex[randInt(10,16)];
+	}
+	return str+str.substring(1,4);
+}
+function add(){
+	array.push([0,randInt(0,dim/(2*size))*size,size,size,randInt(1,size),randInt(1,size),randColor()]);
+}
+function animate(){
+	ctxK.clearRect(0,0,dim,dim);
+	if (counter%4==0)//Math.random()<0.1)
+		add();
+	for (x of array){
+		ctxK.fillStyle = x[6];
+		x[0]+=x[4];
+		x[1]+=x[5];
+		reflect(x);
+		ctxK.save();
+		if(x[0]>dim){
+			array.splice(array.indexOf(x),1);
+		}
+	}
+	counter++;
+}
+//basically: function to capture mouse drag and adjust position of shapes in an array
+//may need to layer 2 canvases; top is white wth clear circle in center
+</script>
+
+	</body>
+</html>
