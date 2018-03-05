@@ -178,8 +178,10 @@
 		function swap(id, src){
 			element = gelm(id);
 			gelm('submain').src = src;
+			gelm('speechRight').scrollTop = 0;
 			element.src = "";
 			element.src = src+"?"+new Date().getTime();
+
 		}
 		
 		function set_active(id){
