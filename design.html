@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <title>design?! </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="animations.css">
+        <link href="https://fonts.googleapis.com/css?family=Gudea|Share|Dosis" rel="stylesheet">
+    </head>
+
+    <body onload='saveState(0);'>
+    <script src='scripts.js'></script>
+
+    <div id=bgImage class='animated '></div>
+
+    <div id=menuParent class='centerParent corner animated zoomIn'>
+        <div id=menuCloud class='animated'>
+            <svg class='cloud shadow animated 'onmouseover="pulseOut(this);hover('HOME', this);" onmouseout="pulseIn(this);unhover();" viewBox='10 33 85 57'>
+                <a href="index.html">
+                <path class='clickable' d='M 25,60 
+                        a 15,15 1 0,0 0,30 
+                        h 55 
+                        a 15,15 1 0,0 0,-30 
+                        a 12,12 1 0,0 -16,-12 
+                        a 20,20 1 0,0 -40,15  
+                        z' />
+                    </a>
+                
+                <text class='face' text-anchor="middle" x="52" y="78">
+                    ・ ε ・
+                </text>
+            </svg>
+        </div>
+        <div id=optionsParent>
+            <div id=animDropletMenu class='droplet2 shadow animated' onmouseover="pulseOut(this);hover('ANIMATION', this);" onmouseout="pulseIn(this);unhover();">
+                    <a href='animation.html'>
+                        <svg class='cloud' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496.86 496.86"><defs><style>.cls-7{fill:#ffce6a;}.cls-8{fill:#ff8a1d;opacity:0.6;}.cls-9{fill:#ff441d;}</style></defs><title>animation!</title><g id="yello">
+                            <circle class="cls-7 clickable" onmouseover="pulseOut('animDroplet');" onmouseout="pulseIn('animDroplet');" cx="248.43" cy="248.43" r="248.43"/></g><g id="Layer_6" data-name="Layer 6">
+                            <ellipse class="cls-8 face" cx="247.18" cy="247.63" rx="209" ry="215.8"/></g><g id="Layer_7" data-name="Layer 7">
+                            <polygon class="cls-9 face" points="177.47 260.37 160.14 242.64 135.71 246.86 147.22 224.9 135.65 202.97 160.09 207.13 177.38 189.35 180.97 213.88 203.22 224.83 181 235.83 177.47 260.37"/>
+                            <polygon class="cls-9 face" points="236.06 358.02 218.73 340.29 194.3 344.51 205.81 322.55 194.24 300.62 218.68 304.78 235.97 287 239.56 311.53 261.81 322.48 239.59 333.48 236.06 358.02"/>
+                            <polygon class="cls-9 face" points="335.46 302.93 318.13 285.19 293.7 289.42 305.21 267.45 293.64 245.52 318.09 249.68 335.37 231.91 338.97 256.44 361.21 267.38 338.99 278.38 335.46 302.93"/>
+                            <polygon class="cls-9 face" points="281.63 209.86 264.3 192.13 239.87 196.35 251.38 174.39 239.81 152.46 264.25 156.62 281.54 138.84 285.13 163.38 307.38 174.32 285.16 185.32 281.63 209.86"/></g></svg>
+                    </a>
+                </div>
+                
+                <div id=designDropletMenu class='droplet2 shadow animated' onmouseover="pulseOut(this);hover('DESIGN', this);" onmouseout="pulseIn(this);unhover();">
+                    <a href='design.html'>
+                        <svg class='cloud' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496.86 496.86"><defs><style>.cls-5{fill:#ff6c6c;}.cls-6{fill:#ff8aae;opacity:0.6;}.cls-3{fill:#87ff6a;}.cls-3,.cls-4{opacity:0.4;}.cls-4{fill:#94b8ff;}</style></defs><title>design!</title><g id="pink">
+                            <circle class="cls-5 clickable" onmouseover="pulseOut('designDroplet');" onmouseout="pulseIn('designDroplet');" cx="248.43" cy="248.43" r="248.43"/></g><g id="colors"><circle class="cls-6 face" cx="317.53" cy="294.93" r="100.5"/>
+                            <circle class="cls-3 face" cx="176.53" cy="294.93" r="100.5"/><circle class="cls-4 face" cx="248.68" cy="180.93" r="100.5"/></g></svg>
+                    </a>
+                </div>
+                    
+                <div id=gameDropletMenu class='droplet2 shadow animated' onmouseover="pulseOut(this);hover('GAMES', this);" onmouseout="pulseIn(this);unhover();">
+                    <a href='games.html'>
+                        <svg  class='cloud' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 497.36 497.04"><defs><style>.cls-1{fill:#796cc4;}.cls-2{fill:#ff3fb6;}.cls-10{fill:#fff;}.cls-11{fill:#000;}</style></defs><title>games!</title><g id="Layer_2_copy_3" data-name="Layer 2 copy 3">
+                            <circle class="cls-1 clickable" onmouseover="pulseOut('gameDroplet');" onmouseout="pulseIn('gameDroplet');" cx="248.43" cy="248.43" r="248.43"/></g><g id="Layer_2_copy_2" data-name="Layer 2 copy 2">
+                            <path class="cls-2 face" d="M172.7,309.79a125.51,125.51,0,0,0,47.16-55c9.78-22.35,13.38-46.84,14.21-71.07.78-22.62.64-48.78-4.76-72.78-78,47.45-122.58,133.6-118.89,222.46C132.48,329.57,153.85,322,172.7,309.79Z" transform="translate(-109.82 -74.57)"/>
+                            <path class="cls-2 face" d="M480.59,182.62a125.44,125.44,0,0,1-72.23-5.22c-22.75-8.8-42.67-23.48-60.46-40-16.61-15.38-35.08-33.91-48.32-54.64,88.64-22,181.19,7.07,241.67,72.28C523,168,502.54,177.85,480.59,182.62Z" transform="translate(-109.82 -74.57)"/></g><g id="Layer_2_copy" data-name="Layer 2 copy">
+                            <path class="cls-10 face" d="M136.45,434.1c57.77,116,196.39,168.9,317.77,118.34S635.66,366.2,594,243.5Z" transform="translate(-109.82 -74.57)"/></g><g id="Layer_2" data-name="Layer 2">
+                            <path class='cls-11 face' d="M599,259.87q-2.69-10.12-6.24-20.15l-458,190.78q4.59,9.6,9.9,18.63Z" transform="translate(-109.82 -74.57)"/>
+                            <path class='cls-11 face' d="M595.57,248.23c-1.79-6.75-5.48-13.19-7.86-19.87l-458,190.78c3.06,6.4,5.74,13.85,9.27,19.87Z" transform="translate(-109.82 -74.57)"/></g><g id="Layer_3" data-name="Layer 3">
+                            <circle  class='cls-11 face' cx="254.07" cy="264.25" r="51.5"/>
+                            <circle class="cls-10 face" cx="255.12" cy="265.24" r="34.82"/></g></svg>
+                    </a>
+                </div>
+        </div>
+        <div id=pageName>
+            DESIGN
+        </div>
+    </div>
+
+    <div id=qualityContent class='animated centerParent'> 
+            loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum
+    </div>
+
+    <div id=stickersF class='container front stickers animated fadeIn' onclick="showContent(this, 'stickersB', 0); wipe(this); fadeToggle('bgImage', '255, 179, 217,0.85', 'design/stickers/icecream.png', 'repeat', 'auto');">
+        <div class='innards cover'>
+            <div class='centerMiddle'>
+                <div class='frontTitle'> LINE Stickers </div>
+                <div class='innerContent'>
+                    Animated stickers for the LINE messaging app.     
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id=stickersB class='container2 tab animated'>
+        <div class='innards'>
+            <div class='innerTitle'> LINE Stickers </div>
+            <div class='innerContent'>
+                I make <a href="https://store.line.me/stickershop/author/132264/en/" target="_blank">animated sticker packs</a> for LINE.
+                <p>
+                <a href='https://store.line.me/stickershop/product/1415148/en' target="_blank">The Daily Lives of Ice Cream</a> shows what I imagine ice cream cones get up to in their spare time. Trax the T-Rex's sticker pack is currently in the publishing pipeline!
+                </p>
+            </div>
+            <div class='innerContent justify'>
+                    <img src='design/stickers/14_melt.png' height=15% onmouseover="replay(this);">
+                    <img src='design/stickers/01_blushy2.png' height=15% onmouseover="replay(this);">
+                
+            </div>
+            <!--<div class='innerContent justify'>
+                    <img src='design/stickers/16_wink.png' class='imgSmall' onmouseover="replay(this);">
+                    <img src='design/stickers/02_ow.png'  class='imgSmall' onmouseover="replay(this);">
+                    <img src='design/stickers/14_melt.png' class='imgSmall' onmouseover="replay(this);">
+                </div>
+            <div class='innerContent'>
+                <img src='design/stickers/01_blushy2.png' class='imgSmall' onmouseover="replay(this);">
+                <img src='design/stickers/16_pancake.png'  class='imgSmall' onmouseover="replay(this);">
+                <img src='design/stickers/08_skippoo.png' class='imgSmall' onmouseover="replay(this);">
+            </div>-->
+        </div>
+    </div>
+
+    <div id=nbtF class='container front nbt animated fadeIn' onclick="showContent(this, 'nbtB', 1); wipe(this); fadeToggle('bgImage', '198, 179, 255,0.85', 'design/nbt/maze.jpg', 'no-repeat', 'cover');">
+        <div class='innards cover'>
+            <div class='centerMiddle'>
+                <div class='frontTitle'> The aMAZEing Space </div>
+                <div class='innerContent'>
+                    Aesthetics of a pop-up maze and its promo materials.     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id=nbtB class='container2 tab animated'>
+        <div class='innards'>
+            <div class='innerTitle'> The aMAZEing Space </div>
+            <div class='innerContent'>
+                Last year, I designed the aesthetics for a student-run maze during campus preview week. 
+            </div>
+            <div class='innerContent'><img src='design/nbt/logo.png' width=100%></div>
+            <div class='innerContent'>
+                <p>Our theme was 'space', so I placed a rocket in the center of the logo and surrounded it with a circular maze resembling planetary rings.</p>  
+                <img src='design/nbt/maze.jpg' class='imageTop' width=100%>
+                <img src='design/nbt/galaxy.jpg' class='imageBottom' width=100%>
+                <p>The maze itself mirrored this structure: a rocket-like tower in the center, and celestial bodies painted around the exterior.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id=hellF class='container front hell animated fadeIn' onclick="showContent(this, 'hellB', 0); wipe(this); fadeToggle('bgImage', '255, 179, 179,0.95', 'design/hell/hellBG.png', 'repeat', 'cover');">
+        <div class='innards cover'>
+            <div class='centerMiddle'>
+                <div class='frontTitle'> Hell's Kitchen </div>
+                <div class='innerContent'>
+                    An interactive comic. Try to make curry without messing up!     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id=hellB class='container2 tab animated'>
+        <div class='innards'>
+            <div class='innerTitle'> Hell's Kitchen </div>
+            <div class='innerContent'>
+                <i>Hell's Kitchen</i> is a 24-page multisequential comic wherein you, a rookie chef, are making curry for the first time.
+                <span class=smol>...or at least attempting to do so.</span>
+                <p>
+                You can read it <a href>on my site</a> digitally, or find me in the Real World™ and cop a tangible copy.
+                </p>
+                <!-- was borne out of a mid-semester project for CMS.618, <i>Interactive Narrative.</i> -->   
+            </div>
+        </div>
+    </div>
+
+    <div id=graphicsF class='container front graphics animated fadeIn' onclick="showContent(this, 'graphicsB', 1); wipe(this); fadeToggle('bgImage', '178, 178, 255, 0.85', 'design/gd/esabBG.png', 'no-repeat', 'cover');">
+        <div class='innards cover'>
+            <div class='centerMiddle'>
+                <div class='frontTitle'> Graphic Design </div>
+                <div class='innerContent'>
+                    Freelance and extracurricular graphic designs.      
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id=graphicsB class='container2 tab animated'>
+        <div class='innards'>
+            <div class='innerTitle'> Graphic Design </div>
+            <div class='innerContent'>
+            Every so often, I get roped into designing for other side projects!<br><br>
+            
+            <img src='design/gd/esabTwitch.png' class='imageTop imageBottom' width=100%>
+            <p>I was commissioned by the UC Berkeley's ESports club to create a Berkeley-themed background for their Twitch streaming page.</p>
+            
+            <img src='design/gd/fap2.png' width=100%>
+            <p>As coordinator for the Freshman Arts Program, I designed the logo for the Summer 2018 shirts, and promotional posters to publicize the program.</p>
+            
+            <img src='design/gd/pm12.png' class=imageLeft width=50%><img src='design/gd/pm22.png' class=imageRight width=50%>
+
+            <p>Within my dorm, I've made a number of posters for study breaks run by the Peer Mentors (MIT's take on RAs).</p>
+            </div>
+            
+
+            <!--
+            <div class='innerContent noPad'>
+                    <img src='design/gd/esabTwitch.png' width=101%>
+            </div>
+            <div class='innerContent noPad'>
+                <img src='design/gd/pm12.png' width=50%>
+                <img src='design/gd/pm22.png' width=50%>
+            </div>
+            <div class='innerContent'>
+                <img src='design/gd/fap1.png' width=100%>
+                <img src='design/gd/fap2.png' width=60%>
+            </div>-->
+        </div>
+    </div>
+
+    <div id=end>© joanna gerr</div>
+    </body>
+</html>
