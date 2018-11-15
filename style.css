@@ -404,8 +404,8 @@ text{
 #qualityContent{
     border: 0px solid #0000ff;
     /*background-color: rgba(255, 255, 255,.62);
-    box-shadow: 0 0px 20px 0 rgba(255, 255, 255, 0.4);*/
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+    box-shadow: 0 0px 20px 0 rgba(255, 255, 255, 0.4);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .4);*/
     color: rgb(0, 0, 0);
     position: absolute;
     left: 28%;
