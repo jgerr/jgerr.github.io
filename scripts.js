@@ -263,3 +263,37 @@ function flipToggle(elm){
         elm.classList.add('flipInX');
     }
 }
+
+function changePage(elm){
+    if (typeof(elm) == 'string'){
+        elm = gelm(elm);
+    }
+    val = elm.value;
+    img = gelm('comicPage');
+    img.src = 'design/hellskitchen/' + val + '.png';
+}
+
+function addPageListener(){
+    document.addEventListener('keydown', function(event) {
+        order = ['00','01','24','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
+
+        img = gelm('comicPage');
+
+        val = img.src.substring(img.src.length-6,img.src.length-4);
+        newIdx = order.indexOf(val);
+        if ((event.key == 'ArrowLeft') && (newIdx > 0)){ newIdx -= 1; }
+        else if ((event.key == 'ArrowRight') && (newIdx < order.length-1)){ newIdx +=1; }
+        img.src = 'design/hellskitchen/' + order[newIdx] + '.png';
+    });
+}
+
+function turnPage(e){
+    order = ['00','01','24','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
+
+    img = gelm('comicPage');
+
+    val = img.src.substring(img.src.length-6,img.src.length-4);
+    newIdx = order.indexOf(val);
+    if (newIdx < order.length-1){ newIdx +=1; }
+    img.src = 'design/hellskitchen/' + order[newIdx] + '.png';
+}

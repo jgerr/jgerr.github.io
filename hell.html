@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>joanna gerr! </title>
+        <link rel="icon" href="favicons/faviconDerp.png" type="image/png">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="style_hell.css">
+        <link rel="stylesheet" type="text/css" href="animations.css">
+        <link href="https://fonts.googleapis.com/css?family=Gudea|Share" rel="stylesheet">
+    </head>
+
+    <body onload="addPageListener();">
+        <script src='scripts.js'></script>
+        <div id='comicContainer'>
+            <div class="innerTitle">Hell's Kitchen</div>
+            <div class="innerContent">Use arrow keys to traverse pages in order, or the dropdown menu to skip to a specific page.</div>
+            <select onchange="changePage(this);">
+                <option value="00">Cover</option>
+                <option value="01">Instructions</option>
+                <option value="24">Credits</option>
+                <option value="02">Start</option>
+                <option value="04">A</option>
+                <option value="05">B</option>
+                <option value="06">C</option>
+                <option value="07">D</option>
+                <option value="08">E</option>
+                <option value="09">F</option>
+                <option value="10">G</option>
+                <option value="11">H</option>
+                <option value="12">I</option>
+                <option value="13">J</option>
+                <option value="14">K</option>
+                <option value="15">L</option>
+                <option value="16">M</option>
+                <option value="17">N</option>
+                <option value="18">O</option>
+                <option value="19">P</option>
+                <option value="20">Q</option>
+                <option value="21">R</option>
+                <option value="22">S</option>
+                <option value="23">T</option>
+            </select>
+            <div class="animated fadeIn">
+                <p><img src="design/hellskitchen/00.png" id=comicPage class=imageLite onClick='turnPage();'></p>
+            </div>
+        </div>
+    </body>
+</html>
