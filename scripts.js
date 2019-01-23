@@ -5,7 +5,7 @@ active = -1;
 wiped = false;
 
 function saveState(idx){
-    names=['DESIGN','ANIMATION','GAMES']
+    names=['NARRATIVES','ANIMATION','GAMES']
     pN = gelm('pageName');
     pagename = names[idx];//pN.innerHTML;
 }

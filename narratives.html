@@ -1,14 +1,13 @@
 <html>
     <head>
-        <title>animation! </title>
+        <title>narratives! </title>
         <link rel="icon" href="favicons/faviconDerp.png" type="image/png">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="style_anim.css">
         <link rel="stylesheet" type="text/css" href="animations.css">
         <link href="https://fonts.googleapis.com/css?family=Gudea|Share|Dosis" rel="stylesheet">
     </head>
 
-    <body onload='saveState(1);'>
+    <body onload='saveState(0);'>
     <script src='scripts.js'></script>
 
     <div id=bgImage class='animated '></div>
@@ -66,7 +65,7 @@
                 </div>
         </div>
         <div id=pageName>
-            ANIMATION
+            NARRATIVES
         </div>
     </div>
 
@@ -74,125 +73,138 @@
             loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum
     </div>
 
-    <div id=gamespritesF class='container front stickers animated fadeIn' onclick="showContent(this, 'gamespritesB', 1); wipe(this); fadeToggle('bgImage', '194, 142, 194,  0.88', 'anim/gamesBG.png', 'no-repeat', 'cover');">
+    <div id=stickersF class='container front stickers animated fadeIn' onclick="showContent(this, 'stickersB', 0); wipe(this); fadeToggle('bgImage', '255, 179, 217,0.85', 'design/stickers/icecream.PNG', 'repeat', 'auto');">
         <div class='innards cover'>
             <div class='centerMiddle'>
-                <div class='frontTitle'> Game Sprites</div>
+                <div class='frontTitle'> LINE Stickers </div>
                 <div class='innerContent'>
-                    Assorted sprite animations I've made for games.    
+                    Animated stickers for the LINE messaging app.     
                 </div>
             </div>
         </div>
     </div>
     
 
-    <div id=gamespritesB class='container2 tab animated'>
+    <div id=stickersB class='container2 tab animated'>
         <div class='innards'>
-            <div class='innerTitle'> Game Sprites </div>
+            <div class='innerTitle'> LINE Stickers </div>
             <div class='innerContent'>
-                I make a lot of animated sprites for games! <br><br>
-                <video class='imageTop imageBottom' width=100% autoplay loop muted>
-                    <source src="anim/momo.mp4" type="video/mp4">
-                </video>
+                I make <a href="https://store.line.me/stickershop/author/132264/en/" target="_blank">animated sticker packs</a> for LINE.
                 <p>
-                For the puzzle-platformer <i>Inspectre</i>, I rigged and animated the main character in various movement states. Furthermore, I gave several background assets animated states that added to the livelihood of the game. 
+                <a href='https://store.line.me/stickershop/product/1415148/en' target="_blank">The Daily Lives of Ice Cream</a> shows what I imagine ice cream cones get up to in their spare time. Trax the T-Rex's sticker pack is currently in the publishing pipeline!
                 </p>
-                <video class='imageTop' width=100% autoplay loop muted>
-                    <source src="anim/soapOp.mp4" type="video/mp4">
-                </video>
-                <video class='imageBottom' width=100% autoplay loop muted>
-                    <source src="anim/soapGame.mp4" type="video/mp4">
-                </video>
-                <p>
-                For the rhythm game <i><a href="http://web.mit.edu/alvareza/www/Builds/Mar_21_Build/" target="_blank">Snakes on a Plane</a></i>, I designed several backgrounds and tiles for levels with different themes, each inspired by a different song. 
-                </p>
+            </div>
+            <div class='innerContent justify'>
+                    <img src='design/stickers/14_melt.png' height=15% onmouseover="replay(this);">
+                    <img src='design/stickers/01_blushy2.png' height=15% onmouseover="replay(this);">
+                
+            </div>
+            <!--<div class='innerContent justify'>
+                    <img src='design/stickers/16_wink.png' class='imgSmall' onmouseover="replay(this);">
+                    <img src='design/stickers/02_ow.png'  class='imgSmall' onmouseover="replay(this);">
+                    <img src='design/stickers/14_melt.png' class='imgSmall' onmouseover="replay(this);">
+                </div>
+            <div class='innerContent'>
+                <img src='design/stickers/01_blushy2.png' class='imgSmall' onmouseover="replay(this);">
+                <img src='design/stickers/16_pancake.png'  class='imgSmall' onmouseover="replay(this);">
+                <img src='design/stickers/08_skippoo.png' class='imgSmall' onmouseover="replay(this);">
+            </div>-->
+        </div>
+    </div>
 
-                <video class='imageTop imageBottom' width=100% autoplay loop muted>
-                    <source src="anim/wtss.mp4" type="video/mp4">
-                </video>
-                <p>
-                For <i><a href="http://jgerr.github.io/finalbuild/index.html" target="_blank">Walkie Talkie Space Ship</a></i>, a project for CMS.611, I animated asteroids and a spaceship in the style of retro pixel art space invaders games. 
-                </p>
+    <div id=nbtF class='container front nbt animated fadeIn' onclick="showContent(this, 'nbtB', 1); wipe(this); fadeToggle('bgImage', '198, 179, 255,0.85', 'design/nbt/maze.jpg', 'no-repeat', 'cover');">
+        <div class='innards cover'>
+            <div class='centerMiddle'>
+                <div class='frontTitle'> The aMAZEing Space </div>
+                <div class='innerContent'>
+                    Aesthetics of a pop-up maze and its promo materials.     
+                </div>
             </div>
         </div>
     </div>
 
-    <div id=modelF class='container front nbt animated fadeIn' onclick="showContent(this, 'modelB', 1); wipe(this); fadeToggle('bgImage', '255, 175, 138,0.5', 'anim/modelBG.PNG', 'no-repeat', 'cover');">
+    <div id=nbtB class='container2 tab animated'>
+        <div class='innards'>
+            <div class='innerTitle'> The aMAZEing Space </div>
+            <div class='innerContent'>
+                Last year, I designed the aesthetics for a student-run maze during campus preview week. 
+            </div>
+            <div class='innerContent'><img src='design/nbt/logo.png' width=100%></div>
+            <div class='innerContent'>
+                <p>Our theme was 'space', so I placed a rocket in the center of the logo and surrounded it with a circular maze resembling planetary rings.</p>  
+                <img src='design/nbt/maze.jpg' class='imageTop' width=100%>
+                <img src='design/nbt/galaxy.jpg' class='imageBottom' width=100%>
+                <p>The maze itself mirrored this structure: a rocket-like tower in the center, and celestial bodies painted around the exterior.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id=hellF class='container front hell animated fadeIn' onclick="showContent(this, 'hellB', 0); wipe(this); fadeToggle('bgImage', '255, 179, 179,0.95', 'design/hell/hellBG.png', 'repeat', 'cover');">
         <div class='innards cover'>
             <div class='centerMiddle'>
-                <div class='frontTitle'> 3D Modeling </div>
+                <div class='frontTitle'> Hell's Kitchen </div>
                 <div class='innerContent'>
-                    The 3D models, rigs, and animations I've made with Blender.      
+                    An interactive comic. Try to make curry without messing up!     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id=hellB class='container2 tab animated'>
+        <div class='innards'>
+            <div class='innerTitle'> Hell's Kitchen </div>
+            <div class='innerContent'>
+                <i>Hell's Kitchen</i> is a 24-page multisequential comic wherein you, a rookie chef, are making curry for the first time.
+                <span class=smol>...or at least attempting to do so.</span>
+                <p>
+                You can read it <a href="hell.html" target="_blank">on my site</a> digitally, or find me in the Real World™ and cop a tangible copy.
+                </p>
+                <!-- was borne out of a mid-semester project for CMS.618, <i>Interactive Narrative.</i> -->   
+            </div>
+        </div>
+    </div>
+
+    <div id=graphicsF class='container front graphics animated fadeIn' onclick="showContent(this, 'graphicsB', 1); wipe(this); fadeToggle('bgImage', '178, 178, 255, 0.85', 'design/gd/esabBG.png', 'no-repeat', 'cover');">
+        <div class='innards cover'>
+            <div class='centerMiddle'>
+                <div class='frontTitle'> Graphic Design </div>
+                <div class='innerContent'>
+                    Freelance and extracurricular graphic designs.      
                 </div>
             </div>
         </div>
     </div>
     
-    <div id=modelB class='container2 tab animated'>
+    <div id=graphicsB class='container2 tab animated'>
         <div class='innards'>
-            <div class='innerTitle'> 3D Modeling </div>
+            <div class='innerTitle'> Graphic Design </div>
             <div class='innerContent'>
-            I also enjoy making low-poly renders of various interesting objects in Blender.<br><br>
+            Every so often, I get roped into designing for other side projects!<br><br>
             
-            <img src='anim/blender/cannoli.gif' width=33% class='imageLeft'><img src='anim/blender/sundae.gif' width=33% class='image'><img src='anim/blender/macarons.gif' width=33% class='imageRight'>
-            <p>Hot take: pastries are the best thing to have been invented since... forever. Sometimes I feel so overwhelmed by my appreciation for sugar, I can't help but model my current favorite sweet thing.</p>
+            <img src='design/gd/esabTwitch.PNG' class='imageTop imageBottom' width=100%>
+            <p>I was commissioned by the UC Berkeley's ESports club to create a Berkeley-themed background for their Twitch streaming page.</p>
             
-            <img src='anim/blender/bunny.gif' width=50% class='imageLeft'><img src='anim/blender/craneBlue.gif' width=50% class='imageRight'>
-            <p>The clear-cut fold structure of origami has always made me think of it as being the real-life equivalent of low-poly modeling. So, sometimes I enjoy combining the two together and creating low-poly models of classic origami creatures. </p>
+            <img src='design/gd/fap2.png' width=100%>
+            <p>As coordinator for the Freshman Arts Program, I designed the logo for the Summer 2018 shirts, and promotional posters to publicize the program.</p>
+            
+            <img src='design/gd/pm12.png' class=imageLeft width=50%><img src='design/gd/pm22.png' class=imageRight width=50%>
+
+            <p>Within my dorm, I've made a number of posters for study breaks run by the Peer Mentors (MIT's take on RAs).</p>
             </div>
-        </div>
-    </div>
+            
 
-
-    <div id=mrbF class='container front hell animated fadeIn' onclick="showContent(this, 'mrbB', 1); wipe(this); fadeToggle('bgImage', '236, 143, 187, 0.603', 'anim/mrbBG1smol.png', 'no-repeat', 'cover');">
-        <div class='innards cover'>
-            <div class='centerMiddle'>
-                <div class='frontTitle'> Mr. Balloon's Wild Ride </div>
-                <div class='innerContent'>
-                    Animated short about losing your head.     
-                </div>
+            <!--
+            <div class='innerContent noPad'>
+                    <img src='design/gd/esabTwitch.png' width=101%>
             </div>
-        </div>
-    </div>
-
-    <div id=mrbB class='container2 tab animated'>
-        <div class='innards'>
-            <div class='innerTitle'> Mr. Balloon's Wild Ride </div>
+            <div class='innerContent noPad'>
+                <img src='design/gd/pm12.png' width=50%>
+                <img src='design/gd/pm22.png' width=50%>
+            </div>
             <div class='innerContent'>
-            In high school, I animated a 'silent film'-style short about Mr. Balloon and his lost head. 
-            <br><br>
-            <div style="position:relative;padding-top:56.25%;" class='image'>
-                <iframe  width="100%" src="https://www.youtube.com/embed/YUPx8doc-T4" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-            </div>
-            <p>This piece won runner-up in the Virginia Film Festival's High School Directors competition in 2015.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id=fightF class='container front graphics animated fadeIn' onclick="showContent(this, 'fightB', 1); wipe(this); fadeToggle('bgImage', '220, 220, 220, 0.8', 'anim/fightBG.png', 'repeat', 'cover');">
-        <div class='innards cover'>
-            <div class='centerMiddle'>
-                <div class='frontTitle'> Fight Club </div>
-                <div class='innerContent'>
-                    Animated short about the rules of Fight Club.     
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id=fightB class='container2 tab animated'>
-        <div class='innards'>
-            <div class='innerTitle'> Fight Club </div>
-            <div class='innerContent'>
-                <i>Fight Club</i> is an animation I made in 2016 about the classic rules of Fight Club. I'm violating the rules right now, but hey, it's for a good cause!<br><br>
-                <div style="position:relative;padding-top:56.25%;" class='image'>
-                    <iframe src="https://www.youtube.com/embed/RAo0ZK4KBl0" frameborder="0" allowfullscreen
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                </div>
-                <p>
-                I made this for a competition in 2016. It was exciting to create a 2D animation entirely from hand using TVPaint, no tweening or vectorization hacks to speak of!
-                </p>   
-            </div>
+                <img src='design/gd/fap1.png' width=100%>
+                <img src='design/gd/fap2.png' width=60%>
+            </div>-->
         </div>
     </div>
 
