@@ -23,10 +23,10 @@
 #bombF{
     color: rgb(255, 255, 255);
     text-shadow: 0 0 12px rgb(4, 0, 255);
-    background-image:linear-gradient(0deg,rgba(60, 57, 206, 0.75),rgba(78, 101, 231, 0.75)), url('narr/bomb_title.PNG');
+    background-image:linear-gradient(0deg,rgba(60, 57, 206, 0.75),rgba(78, 101, 231, 0.75)), url('narr/dorothy_title.PNG');
     background-position:center;
     background-size:cover;
 }
 #bombF:hover{
-    background-image:linear-gradient(0deg,rgba(60, 57, 206, 0.85),rgba(78, 101, 231, 0.85)), url('narr/bomb_title.PNG');
+    background-image:linear-gradient(0deg,rgba(60, 57, 206, 0.85),rgba(78, 101, 231, 0.85)), url('narr/dorothy_title.PNG');
 }

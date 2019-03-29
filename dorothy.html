@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>dorothy and the lizards of oz! </title>
+        <link rel="icon" href="favicons/faviconDerp.png" type="image/png">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="style_hell.css">
+        <link rel="stylesheet" type="text/css" href="animations.css">
+        <link href="https://fonts.googleapis.com/css?family=Gudea|Share" rel="stylesheet">
+    </head>
+
+    <body onload="addPageListenerDorothy();">
+        <script src='scripts.js'></script>
+        <div id='comicContainer'>
+            <div class="innerTitle">Dorothy and the Lizards of Oz</div>
+            <div class="innerContent">Use arrow keys to traverse pages in order, or the dropdown menu to skip to a specific page.</div>
+            <select onchange="changePageDorothy(this);">
+                <option value="00">01</option>
+                <option value="01">02</option>
+                <option value="02">03</option>
+                <option value="03">04</option>
+                <option value="04">05</option>
+                <option value="05">06</option>
+            </select>
+            <div class="animated fadeIn">
+                <p><img src="comics/dorothy/00.png" id=comicPage class=imageLite onClick='turnPageDorothy();'></p>
+            </div>
+        </div>
+    </body>
+</html>

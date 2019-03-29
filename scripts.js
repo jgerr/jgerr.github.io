@@ -297,3 +297,37 @@ function turnPage(e){
     if (newIdx < order.length-1){ newIdx +=1; }
     img.src = 'design/hellskitchen/' + order[newIdx] + '.png';
 }
+
+function changePageDorothy(elm){
+    if (typeof(elm) == 'string'){
+        elm = gelm(elm);
+    }
+    val = elm.value;
+    img = gelm('comicPage');
+    img.src = 'comics/dorothy/' + val + '.png';
+}
+
+function addPageListenerDorothy(){
+    document.addEventListener('keydown', function(event) {
+        order = ['00','01','02','03','04','05']
+
+        img = gelm('comicPage');
+
+        val = img.src.substring(img.src.length-6,img.src.length-4);
+        newIdx = order.indexOf(val);
+        if ((event.key == 'ArrowLeft') && (newIdx > 0)){ newIdx -= 1; }
+        else if ((event.key == 'ArrowRight') && (newIdx < order.length-1)){ newIdx +=1; }
+        img.src = 'comics/dorothy/' + order[newIdx] + '.png';
+    });
+}
+
+function turnPageDorothy(e){
+    order = ['00','01','02','03','04','05']
+
+    img = gelm('comicPage');
+
+    val = img.src.substring(img.src.length-6,img.src.length-4);
+    newIdx = order.indexOf(val);
+    if (newIdx < order.length-1){ newIdx +=1; }
+    img.src = 'comics/dorothy/' + order[newIdx] + '.png';
+}
