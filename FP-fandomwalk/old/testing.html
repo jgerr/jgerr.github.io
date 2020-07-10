@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title> fandom-walk</title>
+        <!--including d3 library via CDN url-->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    
+        <!--including our own stylin'-->
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+
+        <div id="anchored" class="">
+            I'm going to write a story about <span class=option>category</span>. <br>
+            More specifically, <span class=option>fandom</span>. <br>
+            It'll be <span class=option>100</span> words long. <br>
+            It's genre is <span class=option>genre</span>. <br>   
+            And it's rated <span class=option>R</span>.         
+        </div>
+        <div id="viz_scatter"></div>
+        <div id="viz_ridge"></div>
+         <!-- central screen content: tree -->
+        <div id="mainframe" class="parent"  onclick="moveLeft('frag_1');">
+            <!-- <div id="frag_1" class="child fragment">
+                I'm going to write a <span class=option>story</span>.
+            </div> -->
+            <!-- <svg id="panel_1" width="400" height="400" class="child" onclick="moveLeft('panel_1'); nextLevel(2);">
+                <rect rect x="50" y="50" width="300" height="300" style="fill:rgb(255, 255, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+            </svg> -->
+        </div>
+
+        <!-- scripts at end so objects onscreen loaded first -->
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="scripts.js"></script> 
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Pokemonitor</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!--including d3 library via CDN url-->
+    <link rel="stylesheet" type="text/css" href="dootdoot.css" />
+    <!--including our own stylin'-->
+  </head>
+
+  <body>
+    <div id="map" style="float:left">
+      <img id="kanto_map" src="../images/kanto_map.jpg"/>
+      <object id="kanto_overlay" data="../images/kanto_overlay.svg" type="image/svg+xml"></object>
+    </div>
+
+    <div id="data" style="float:left">
+        Choose Region <select id="region_select">
+        </select>
+        <div id="spawn_chart">
+    </div>
+
+    <script src="dootdoot.js"></script>
+    <!--including our own scripts; 
+                                                                        placed at end of body so HTML elements exist by the time we ref.-->
+  </body>
+</html>

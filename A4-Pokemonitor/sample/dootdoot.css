@@ -1,0 +1,28 @@
+#map {
+  float: left;
+  width: 50%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#kanto_map {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#kanto_overlay {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#data {
+  float: right;
+  width: 50%;
+}

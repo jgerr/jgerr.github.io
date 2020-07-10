@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title> fandom-walk</title>
+        <!--including d3 library via CDN url-->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    
+        <!--including our own stylin'-->
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <svg id="template" width="400" height="400" class="column_child" onclick="moveLeft('template');">
+            <rect rect x="50" y="50" width="300" height="300" style="fill:rgb(255, 255, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+        </svg>
+
+
+        <!-- central screen content: tree -->
+        <div id="mainframe" class="parent">
+            <svg id="panel_1" width="400" height="400" class="child" onclick="moveLeft('panel_1'); nextLevel(2);">
+                <rect rect x="50" y="50" width="300" height="300" style="fill:rgb(255, 255, 255);stroke-width:3;stroke:rgb(0,0,0)" />
+            </svg>
+
+            <div id="column_1" class="column parent">
+
+            </div>
+        </div>
+
+        <!-- scripts at end so objects onscreen loaded first -->
+        <script src="scripts.js"></script> 
+    </body>
+</html>

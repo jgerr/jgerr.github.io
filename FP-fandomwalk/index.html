@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <title> fandom-walk</title>
+        <!--including d3 library via CDN url-->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    
+        <!--including my own stylin' + animate.css library-->
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="animate.css" />
+    </head>
+    <body>
+        <div id="icon1" class='icon'>
+            <div style="padding-bottom:10%;">
+                <a href="https://github.mit.edu/6894-sp20/FP-fandomwalk/blob/master/README.md"  target="_blank"><img src="img/placeholder.png" width=100%></a>
+            </div>            
+            README.md
+        </div>
+        <div id="icon2" class='icon'>
+            <div style="padding-bottom:10%;">
+                <a href="https://github.mit.edu/6894-sp20/FP-fandomwalk/blob/master/final/gerr_fandomwalk_paper.pdf"  target="_blank"><img src="img/placeholder.png" width=100%></a>
+            </div>            
+            paper.pdf
+        </div>
+
+        <div id="help" class="child">
+            <div style="padding:6% 8%;"> 
+                fandomwalk is an interactive visualization that allows you to simulate the experience of being a fanfiction author, exploring the success you achieve--and how it compares to others' success--as a direct result of your narrative choices through data visualization.
+                <br><br>
+                when the cursor is blinking, <span class=pinktext>type your choice</span> from the list of possible options for each of several categories. press <span class=pinktext>enter</span> to register those choices, and continue to the next one. 
+                <br><br>
+                <span class=pinktext style="cursor: pointer;" onclick="zoomExit('help');">click here to close</span>
+            </div>
+        </div>
+        
+        <div id="sources" class="child">
+            <div style="padding:6% 8%;"> 
+                fandomwalk uses the anonymized fandom dataset compiled in 2017 by <a href="http://research.fru1t.me/" class=pinktext> researchers at UWash</a>, and was created by joanna gerr @ MIT (2020).
+                <br><br>
+                for the purposes of this project, the original dataset was needlessly large; i ran python scripts to cull the dataset down to something more managable, preserving only the data I felt would yield most interesting results, and limiting this viz to 5 large overarching categories, 8 fandoms per category, and 8000 works per each fandom--which 8000 were chosen via randomized sampling.
+                <br><br>
+                <span class=pinktext style="cursor: pointer;" onclick="zoomExit('sources');">click here to close</span>
+            </div>
+        </div>
+
+        <div id="mainframe" class="child"> <!-- onclick="moveLeft('frag_1');"-->
+            <div id="frametitle">fanfiction.txt</div>
+            <div id="frameheader"> 
+                <span class="menu" onclick="restart();">New</span> &nbsp; 
+                <span class="menu" onclick="zoomEntrance('help');">Help</span> &nbsp; 
+                <span class="menu" onclick="zoomEntrance('sources');">Sources</span>
+            </div>
+            <div id="innerframe">
+                <div id="sentence" class="sentence">
+                    <div id="frag_1" class="frag">                    
+                                                
+                    </div> 
+                    <div id="blinking_1" class="static"> </div>
+                    <br>
+                    <div id="frag_2" class="frag"> 
+                       
+                    </div>
+                    <div id="blinking_2" class="static"> </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="viz_1" class="popupShell"> 
+            <div class="popupTitle">pikafan@fandom-walk</div>
+            <div id="viz_1_body" class="popupBody terminal">
+                <div class="terminal_title" id="viz_1_title"> <span id="viz_1_fandom_name" class="pinktext">NARUTO</span> FANDOM:<br>
+                    FANFIC BY POPULARITY
+                    
+                     <!-- =========================================== -->
+                    </div>
+                <div id="viz_scatter" class="chart"></div>
+                <div id="key_scatter">
+                    <span class="inline">
+                        <span id="general_fic" class="dot" onmouseover="giveInfo(0);"></span> Fic
+                    </span><br />
+                    
+                    <span class="inline">
+                        <span id="match_fic" class="dot" onmouseover="giveInfo(1);"></span> Match
+                    </span><br />
+                    
+                    <span class="inline">
+                        <span id="your_fic" class="dot" onmouseover="giveInfo(2);"></span> Yours
+                    </span><br />
+                </div>
+            </div>
+        </div>
+        <div id="viz_2" class="popupShell"> 
+            <div class="popupTitle">pikafan@fandom-walk</div>
+            <div id="viz_2_body" class="popupBody terminal">
+                <div class="terminal_title" id="viz_2_title"> FILTER FANDOM<br> FANFIC BY TAGS:</div>
+                <div id="viz_heatmap" class="chart"></div>
+            </div>
+        </div>
+        <div id="viz_3" class="popupShell"> 
+            <div class="popupTitle">FansOfOurFiction.org</div>
+            <div id="viz_3_body" class="popupBody">   
+                <div class="site_title" id="viz_3_title"> FansOfOurFiction.org 
+                    <span style="font-size: 1vw; float:right; transform:translate(0, 10%);"> &nbsp;&nbsp; Welcome, pikafan!</span>
+                </div>
+                
+                <div id="site_tags" class="site">
+                    <span id="fic_title" class="text_blur">when slfgsing dles lide</span>
+                    <br>
+                    pikafan
+                    <br><br>
+                    <div id="fic_tags_sub">
+                        <table width=100% style="text-align:center;">
+                            <tr>
+                                <td id="genre_fill" width=33%>Genre: Adventure</td> 
+                                <td id="rating_fill" width=33%>Genre: Adventure</td> 
+                                <td id="words_fill" width=33%>Genre: Adventure</td>
+                            </tr>
+                        </table>
+                        <span> <span id="favorites_fill"></span> Favorites &nbsp;&nbsp;&nbsp;
+                              <span id="comments_fill"></span> Comments</span>
+                    </div>
+                </div>
+                <div id="site_entry" class="site text_blur">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt massa quis risus molestie congue. Aliquam egestas ullamcorper eros. Cras sollicitudin viverra ante, nec viverra purus rhoncus quis. Integer molestie nisl eu suscipit lacinia. Aenean pellentesque nulla vitae lacus rhoncus blandit. Suspendisse ullamcorper sed sem ut porttitor. Ut ultricies augue convallis lacus eleifend, at efficitur nibh vehicula. Sed non lacus sagittis magna suscipit fringilla. Sed neque arcu, auctor non elementum id, pellentesque vel ipsum. Ut tincidunt feugiat nisl eget suscipit. Mauris et quam elit. Curabitur aliquam efficitur urna non tincidunt. Donec auctor tortor eget gravida suscipit. Fusce magna dolor, dignissim ut purus auctor, consectetur malesuada massa. Aenean magna leo, ullamcorper malesuada elit ac, dignissim mattis velit. Quisque vel massa laoreet, feugiat ex sed, facilisis erat.
+                    </p>
+                    <p>
+                        In leo felis, feugiat at tellus et, luctus ullamcorper libero. Nunc egestas mi vel mi feugiat, vel bibendum diam accumsan. Aenean sodales magna quis magna tristique malesuada. Mauris sodales aliquam imperdiet. Cras ut elit imperdiet, egestas enim vitae, laoreet orci. Nulla porttitor nec lorem sit amet auctor. Maecenas ipsum dolor, vehicula at sem a, pharetra hendrerit tellus. Curabitur ut finibus tortor. Vestibulum efficitur erat eu dictum porttitor. Pellentesque tempus felis dui, quis ullamcorper massa faucibus non. Quisque dapibus pretium lectus at condimentum. In sed commodo nisi, nec maximus sapien. Maecenas sit amet sagittis mi. Aenean fermentum, leo sit amet porta dignissim, felis eros pellentesque lacus, quis feugiat ex purus at tortor. Maecenas ornare dui a urna accumsan consectetur. In hac habitasse platea dictumst.
+                    </p>
+                    <p>
+                        In sodales at enim eu elementum. Donec porttitor ex mauris, vel commodo libero maximus vel. Nunc vulputate nunc sed feugiat iaculis. Nam elementum semper purus, quis accumsan risus vulputate quis. Nunc sodales dapibus orci et tempor. Morbi vel augue sed nunc tempor ornare sed et dui. Proin et nibh tincidunt turpis pharetra mattis. Aenean id eleifend metus. Maecenas nec arcu fringilla, mollis ex at, sodales dolor. Nam consequat erat quis egestas maximus. Duis ac sapien eu nunc porttitor tempus.
+                    </p>
+                    <p>
+                        Vivamus id pellentesque nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam turpis lorem, blandit sit amet pretium sed, porttitor eu arcu. Nunc in sapien tempus, laoreet sem ac, hendrerit augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce nec ligula velit. Phasellus venenatis, risus in consequat eleifend, orci turpis lacinia eros, molestie volutpat nunc turpis sed massa. Sed sodales tincidunt risus et auctor. Quisque in nisl dignissim, lacinia magna nec, feugiat ipsum. Nunc nec felis ut eros vestibulum laoreet ut ut urna. Morbi velit velit, ultricies sit amet scelerisque eget, iaculis ut sapien. Morbi mattis vulputate orci sed commodo.
+                    </p>
+                    <p>
+                        Nullam fringilla lorem quis ornare aliquet. Nunc semper augue vel eros tristique, in sagittis tortor venenatis. Vestibulum egestas mattis fringilla. Fusce mollis diam id leo fermentum finibus. Nulla at imperdiet nunc. Pellentesque sed quam nulla. Aliquam eros mauris, fringilla vitae facilisis ut, dictum eu turpis. Vivamus maximus ac nibh ut accumsan. Phasellus vel scelerisque lectus. Vivamus venenatis risus eu sapien porta, quis mollis libero rutrum. Duis accumsan sollicitudin pellentesque. Pellentesque tincidunt, nisl vel elementum elementum, leo orci aliquam ipsum, quis tristique eros mi quis risus. Curabitur posuere dapibus tortor et pulvinar. Quisque risus diam, ultrices non libero in, tempus molestie dui.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="viz_4" class="popupShell"> 
+            <div class="popupTitle">pikafan@fandom-walk</div>
+            <div id="viz_4_body" class="popupBody terminal">
+                <div id="navigator"> 
+                    Hover over scatterplot:<br>
+                    &nbsp;* See fanfic <span class="pinktext"> tags</span><br>
+                    &nbsp;* View popularity <span class="pinktext"> stats</span><br>
+                    &nbsp;&nbsp;&nbsp;-Raw <span class="pinktext"> counts</span>  <br>
+                    &nbsp;&nbsp;&nbsp;-Category <span class="pinktext"> ranks</span>  <br>
+                    Hover over heatmap: <br>
+                    &nbsp;* See <span class="pinktext"> tags</span> statistics<br>
+                    &nbsp;* View spread on <span class="pinktext"> plot</span><br>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- scripts at end so objects onscreen loaded first -->
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="scripts.js"></script> 
+    </body>
+</html>
