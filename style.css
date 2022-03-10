@@ -135,7 +135,7 @@ p{
     max-width:100%;
 }
 
-.card_image{
+.card_img{
     max-width: 40%;
 }
 
@@ -422,7 +422,7 @@ a:active {
 }
 
 @media screen and (max-width: 700px) {
-    .card_body, .card_image {
+    .card_body, .card_img {
       /* width: 100%;  */
       /* The width is 100%, when the viewport is 800px or smaller */
       max-width: 100%;
