@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>data visualizations!</title>
+        <link rel="icon" href="../favicon_io/android-chrome-192x192.png" type="image/png">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<link rel="stylesheet" type="text/css" href="../images.css">
+        <link href="https://fonts.googleapis.com/css?family=Gudea|Share" rel="stylesheet">
+        <link href="../fonts/LilGrotesk-Bold.otf" rel="stylesheet">
+        <link href="../fonts/LilGrotesk-Regular.otf" rel="stylesheet">
+        <link href="../fonts/Redaction-Bold.otf" rel="stylesheet">
+        <link href="../fonts/Redaction-Italic.otf" rel="stylesheet">
+        <link href="../fonts/Redaction-Regular.otf" rel="stylesheet">
+    </head>
+
+<body>
+    <div id="desktop_menu">
+        <a class="menu-link" href="../game-design.html"><div class="desktop_menu_item shadow-1">Game Design</div></a>
+        <a class="menu-link" href="../programming.html"><div class="desktop_menu_item shadow-2">Programming</div></a>
+        <a class="menu-link" href="../art.html"><div class="desktop_menu_item shadow-3">Art/Comics</div></a>
+        <a class="menu-link" href="../about-me.html"><div class="desktop_menu_item shadow-4">About Me</div></a>
+        <a class="menu-link" href="../index.html"><div class="desktop_menu_item shadow-5">Home</div></a>
+    </div>
+
+    <main>        
+        <div class="main">
+            
+            <div class="infofull shadow-static tag-2">
+                <div class="card_body">
+                    <div class="card_1ptitle"> <span>📈 Data Visualization</span></div>
+                        <div class="card_text">
+                            A few of the D3 visualizations I've worked on in recent years, including:
+                            <ul>
+                                <li> <a href="http://joanna.fish/A4-Pokemonitor/"><b>PokeMonitor</b></a>, which shows data about all the Pokemon spawns a trainer will encounter in their journey through the Kanto region </li>
+                                <li> <a href="http://joanna.fish/FP-fandomwalk/"><b>Fandom Walk</b></a>, a choice-driven, narrative viz that centers around the experience and reception of writing fanfiction within fandom  </li>
+                            </ul>
+                        </div> 
+                </div>
+            </div>
+            
+            <div class="infofull shadow-static tag-2">
+                <div class="card_body">
+                    <div class="card_subtitle"> <span>PokeMonitor</span></div>
+                        <div class="card_text">
+                           <a href="http://joanna.fish/A4-Pokemonitor/"><b>PokeMonitor</b></a>  is a D3 visualization that shows what a beginning Pokemon trainer in the Kanto region will encounter as they embark on their very own Pokemon journey. The spawn data and optimal adventure order have been sourced from the StrategyWiki for Pokemon Red. 
+                           <ul>
+                               <li> Created the D3 location-dependent Pokemon spawn rate bar-graphs with animated transitions and Pokedex tooltips </li>
+                               <li> Gathered and compiled data from SpawnWiki and other Pokemon datasets</li>
+                               <li> Drew all assets used in the viz, including: the pixel-art map of Kanto, the animated player icon, the pixel art video control buttons; also refined CSS on viz to resemble old-timey Pokemon aesthetic </li>
+                               <li><a href="https://github.com/jgerr/jgerr.github.io/tree/master/A4-Pokemonitor">This readme</a> contains a more thorough explanation of how the visualization works, and <a href="https://github.com/jgerr/jgerr.github.io/blob/master/A4-Pokemonitor/writeup.md">this writeup</a> has further details behind our process </li>
+                           </ul>
+                        </div>   
+                    <div class="card_img"> <img src="pokemonitor_02.gif" class="cardimg" ></div>
+                    <div class="card_subtitle"> <span>Accredation </span></div>
+                    <div class="card_text">
+                        I worked on this project with Jenny Zhang, who did a tremendous job manipulating the player icon's paths across and around the map, along SVG paths and with stylized manhattan-distance movement.
+                    </div>   
+                </div>
+            </div>
+
+            <div class="infofull shadow-static tag-2">
+                <div class="card_body">
+                    <div class="card_subtitle"> <span>Fandom Walk</span></div>
+                        <div class="card_text">
+                           <a href="http://joanna.fish/FP-fandomwalk/"><b>Fandom Walk</b></a> is a choice-driven narrative data visualization that centers around the experience of writing fanfiction within fandom. Explicit visual encodings that draw direct connections between the process of writing fanfiction and the choices made when designing a data visualization, and interactions reveal the tangible presence of normally-hidden labor,  encouraging the user to consider deliberate processes that go into construction of their fiction--and the instinctive reactions that arise when certain metrics for success go unmet.
+                           <ul>
+                               <li>Used CSS/HTML to theme the project and site like a desktop with text editor, web browser, and terminals</li>
+                               <li>Created a javascript "text editor" to prompt answers, which creates a novel method of choice selection with increased intentionality</li>
+                               <li>Three D3 dataviz representations (scatterplot, heatmap, tooltips) are displayed in pseudo-terminal windows</li>
+                               <li> <a href="https://github.com/jgerr/jgerr.github.io/blob/master/FP-fandomwalk/README.md">This readme</a> elaborates on the intentions and methods behind this data visualization, and <a href="https://github.com/jgerr/jgerr.github.io/blob/master/FP-fandomwalk/final/gerr_fandomwalk_paper.pdf">this short paper</a> contains final conclusions about the project</li>
+                           </ul>
+                        </div>   
+                    <div class="card_img"> <img src="fandom_02.gif" class="cardimg" ></div>
+                    <div class="card_subtitle"> <span>Accredation </span></div>
+                    <div class="card_text">
+                        This project was solely my own. Apart from the anonymized dataset I found online, almost everything else was designed/coded by me.
+                    </div>   
+                </div>
+            </div>
+
+            
+
+            <div class="footer">
+            ©2022 Joanna Gerr
+            </div>
+       
+
+        </div>
+    </main>
+
+</body>
+</html>
+

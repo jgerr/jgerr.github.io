@@ -1,0 +1,103 @@
+#testimg{
+    background-image: url("art_comics/color3.png");
+    background-color: var(--tag-color-1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-1) inset; */
+    width: 100%;
+}
+
+#testimg2{
+    background-image: url("art_comics/color3.png");
+    background-color: var(--tag-color-2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
+
+
+#testimg3{
+    background-image: url("programming/pokemonitor_02.gif");
+    background-color: var(--tag-color-2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
+
+
+#testimg4{
+    background-image: url("art_comics/hellskitchen_02.gif");
+    background-color: var(--tag-color-3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
+
+#testimg5{
+    background-image: url("game_design/allsfair_01.gif");
+    background-color: var(--tag-color-1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
+
+
+#testimg6{
+    background-image: url("art_comics/icecream_01.gif");
+    background-color: var(--tag-color-3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
+
+
+#testimg7{
+    background-image: url("programming/rand2.PNG");
+    background-color: var(--tag-color-2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
+
+
+#testimg8{
+    background-image: url("game_design/momo_02.gif");
+    background-color: var(--tag-color-1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
+
+#testimg9{
+    background-image: url("programming/cats_04.gif");
+    background-color: var(--tag-color-2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
+    width: 100%;
+}
