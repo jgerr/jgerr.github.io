@@ -138,6 +138,9 @@ p{
 .card_img{
     max-width: 40%;
 }
+.card_img2{
+    max-width: 100%;
+}
 
 .cardimg {
     width: 100%;
