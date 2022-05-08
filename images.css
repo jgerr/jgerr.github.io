@@ -6,7 +6,7 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-1) inset; */
-    width: 100%;
+    
 }
 
 #testimg2{
@@ -17,7 +17,7 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
 }
 
 
@@ -29,7 +29,7 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
 }
 
 
@@ -41,7 +41,7 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
 }
 
 #testimg5{
@@ -52,7 +52,7 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
 }
 
 
@@ -64,7 +64,7 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
 }
 
 
@@ -76,7 +76,7 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
 }
 
 
@@ -88,16 +88,25 @@
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
 }
 
 #testimg9{
-    background-image: url("programming/cats_04.gif");
+    background-image: url("programming/cats_06_crop.gif");
     background-color: var(--tag-color-2);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: multiply;
     /* box-shadow: 0px 00px 10px 10px var(--tag-color-2) inset; */
-    width: 100%;
+    
+}
+
+
+@media screen and (max-width: 700px) {
+
+    #testimg9{
+        background-image: url("programming/cats_06.gif");
+    }
+
 }

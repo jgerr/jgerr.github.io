@@ -30,21 +30,79 @@
             <div class="infofull shadow-static tag-2">
                 <div class="card_body">
                     <div class="card_1ptitle"> <span>🎨 CATS</span></div>
-                        <div class="card_text">
-                            Behold CATS, or, the Computer Artist's Tools Suite! This Python add-on tools menu for Blender allows digital artists to create and control non-photorealistic rendering styles without needing to edit shader graphs directly. The intention is to enable novice 3D artists to eschew daunting shader graphs, while still being able to make use of more complex rendering styles in their models, backgrounds, and environments (for projects like comics, games, assets, etc).  
-                            <ul>
-                                <li> Created a user-friendly UX/UI that makes use of/mimics existing digital art software conventions, like having stylized shading layers that can be added to and subtracted from a master shader </li>
-                                <li> Procedurally generated shaders come with controls to tune final shader appearance, making it so users don't need to construct the shaders themselves, but still maintain an easy method of adjusting shader properties to their liking</li>
-                                <li>CATS so far includes: toon shading, hatched shading, dithered shading, local and global object outlines, batch processing, and CATS shader preset saving and loading</li>
-                            </ul>
-                        </div>
+                    <div class="card_text">
+                        The Comic Artist's Tools Suite (a.k.a CATS) is a Python add-on for Blender that enables digital artists to procedurally generate and synthesize a selection of curated Non-Photorealistic Rendering (NPR) effects through an accessible and user-friendly interface. Users can quickly create and adjust modular shaders that customize the style of their 3D environment backgrounds, bypassing the need to craft shaders by hand and speeding up the traditional workflow for rendering pipelines.                        
                     </div>
                 </div>
+            </div>
                         
             <div class="infofull shadow-static tag-2">
                 <div class="card_body">   
-                    <div class="card_img2"> <img src="cats_04.gif" class="cardimg" ></div>
-                    <div class="card_img2"> <img src="cats_05.png" class="cardimg" ></div>
+                    <div class="card_subtitle"><span>Demonstration</span></div>
+                    <div class="card_text">
+                        CATS functions through a menu docked inside of Blender. In this demonstration, we see how different layers can be selected, and how properties can be adjusted simply through sliders and standard UI elements.
+                    </div>
+                    <div class="card_img2"> <img src="cats_06.gif" class="cardimg" ></div>
+                </div>
+            </div>
+                        
+            <div class="infofull shadow-static tag-2">
+                <div class="card_body">
+                    <div class="card_subtitle"><span>Motivation</span></div>
+                    <div class="card_text">
+                        In the modern day, technology aids workflows across many creative industries. However, for an indie artist who wishes to learn these technological pipelines, there are high barriers to entry; proprietary tools are expensive, and technical expertise takes time to develop, making it difficult for a newcomer to use the technology in full. 
+                    </div>
+                    <div class="card_text">
+                        CATS aims to to help artists with little 3D experience create interesting, distinctive rendering styles with minimal hassle. By abstracting away the tedious work of creating shaders, and instead providing robust sets of parameters to adjust, we can empower users to skip to their own creative exploration of NPR styles that they can use on models and environments for their own projects. 
+                        <!-- CATS is built for Blender, which is a free and open-source 3D creation software, making it widely accessible to all. -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="infofull shadow-static tag-2">
+                <div class="card_body">
+                    <div class="card_subtitle"><span>Design & Implementation</span></div>
+                    <div class="card_text">
+                        Much work went into creating CATS, including: 
+                        <ul>
+                            <li> Designing a user-friendly UX/UI that makes use of/mimics existing 2D digital art software conventions, using the metaphor of "layers" to introduce different NPR styles that can be combined</li>
+                            <li> Creating a modular design scheme for procedurally generated shaders with hierarchical structure; allows for creation of a composite master shader, and several node groups within that which serve to control different shading layers</li>
+                            <li> Curating useful properties for tuning shader appearances, made accessible through a streamlined UI</li>
+                            <li> Implementing NPR techniques in CATS, like: toon shading, hatched shading, dithered shading, and object outlines</li>
+                            <li> Allowing for batch processing objects, and shader preset saving and loading</li>
+                        </ul>
+                        
+                        <!-- <div class="card_img2"> <img src="cats_11.png" class="cardimg" ></div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="infofull shadow-static tag-2">
+                <div class="card_body"> 
+                    <div class="card_subtitle"><span>Sample Work</span></div>
+                    <!-- <div class="card_img2"> <img src="cats_07.png" class="cardimg" ></div> -->
+                    <div class="card_text">
+                        Here are two renders of a cafe environment using CATS shaders to achieve different aesthetic styles. The first style is entirely monochromatic, inspired by the manga Witch Hat Atelier; the second style uses color only, inspired by the webcomic Cucumber Quest. 
+                    </div>
+                    <div class="row_dt_col_mob">
+                        <div class="card_img2"> <img src="cats_09.png" class="cardimg" ></div>
+                        <div class="card_img2"> <img src="cats_08.png" class="cardimg" ></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="infofull shadow-static tag-2">
+                <div class="card_body">   
+                    <div class="card_subtitle"><span>Comic</span></div>      
+                    <div class="card_text">
+                        To show CATS in action, this is a short comic strip I drew which showcases a 3D environment textured by CATS. The cafe environment and signboard were rendered from various angles in Blender, while the character, lettering, and overall composition were done with Clip Studio Paint. 
+                    </div>
+                    <div class="row_dt_col_mob">
+                        <div class="card_img2"> <img src="comic_01.png" class="cardimg" ></div>
+                        <div class="card_img2"> <img src="comic_02.png" class="cardimg" ></div>
+                    </div>
+
                 </div>
             </div>
                     
@@ -52,7 +110,7 @@
                 <div class="card_body">   
                     <div class="card_subtitle"> <span>Accredation </span></div>
                     <div class="card_text">
-                        This tool is being developed solely by me... and with help from various Blender resources and gurus online! It is still in progress, and being tested with users regularly; but I hope to release the first public build by the end of May 2022 on Github, and link to the paper I am writing for my thesis here.
+                        This tool is being developed solely by me, with help from various Blender resources and gurus online! I began developing this tool for my Masters thesis in 2022, and am currently the sole developer on it still. It is a work in progress; but I hope to release the first public build by the end of May 2022 on Github, and link to the paper I am writing for my thesis here.
                     </div>   
                 </div>
             </div>
