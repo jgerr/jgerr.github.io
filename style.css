@@ -549,6 +549,21 @@ a:active {
     overflow: visible;
 }
 
+.infocard-featured .title-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.infocard-featured .card_text-featured a {
+    position: relative;
+    z-index: 2;
+}
+
 .card_img-featured {
     width: 100%;
 }
