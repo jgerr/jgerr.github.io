@@ -547,6 +547,11 @@ a:active {
     margin: 0px 0 30px 0;
     position: relative;
     overflow: visible;
+    transition: transform 0.2s ease;
+}
+
+.infocard-featured:has(.title-link):hover {
+    transform: translateX( 18px );
 }
 
 .infocard-featured .title-link::after {
