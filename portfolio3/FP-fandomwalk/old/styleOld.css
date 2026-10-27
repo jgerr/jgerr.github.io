@@ -1,0 +1,118 @@
+@font-face {
+    font-family: baloo;
+    src: url(fonts/BalooPaaji2-Regular.ttf);
+}
+
+/* ~~~~~~~~~~~~~~HOLISTIC~~~~~~~~~~~~~~ */
+body{
+    margin: 0 0 0 0;
+    font-family: baloo;
+    font-size: 1.6vw;
+    /* background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(255, 228, 228)); */
+    background-color: blanchedalmond;
+}
+/* ~~~~~~~~~~~~~~CLASSES~~~~~~~~~~~~~~ */
+/* for centering */
+.parent {
+    position: relative;
+}
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sentence {
+    position: absolute;
+    width: 90%;
+    top: 35%;
+    left:5%;
+}
+.column_child {
+    position: relative;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+.column{
+    height: 100vh;
+    width: 30vw;
+    background: blue;
+    overflow-y: scroll;
+}
+.panel{
+  /* animation-fill-mode: forwards; */
+  animation-name: scootLeft;
+  animation-duration: 2s;
+}
+.option{
+    color:pink;
+}
+.frag{
+    /* display: flex; */
+}
+.static{
+    /* flex: 0 0 65%; */
+    float:left;
+    margin-right: 0.1%    
+}
+.choice{
+    /* flex: 1; */
+    float:left;
+}
+.dynamic{
+    position: relative;
+    color:rgb(255, 85, 113);
+} 
+.list{
+    position: absolute;
+    color: #aaaaaa;
+    opacity: 0;
+}
+
+
+/* ~~~~~~~~~~~~~~IDS~~~~~~~~~~~~~~ */
+#mainframe{
+    width: 100vw;
+    height: 100vh;
+    /* text-shadow: 0px 1px 2px #b1b1b1; */
+    border: 1px solid sienna;
+}
+
+#template{
+    display:none;
+}
+
+#anchored{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    width: 50%
+}
+
+#viz_scatter{
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    transform: translate(0%, -50%);
+    width: 50%
+}
+#viz_ridge{
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    transform: translate(0%, -50%);
+    width: 50%
+}
+#typing{
+    float:left;
+}
+#blinking{
+    float: left;
+}
+/* ~~~~~~~~~~~~~~ANIMATIONS~~~~~~~~~~~~~~ */
+@keyframes scootLeft {
+    from {transform: translate(-50%, -50%);}
+    to {transform: translate(-150%, -50%);}
+  }

@@ -1,0 +1,390 @@
+/* style.css */
+
+@font-face {
+  font-family: Fipps;
+  src: url(fonts/fipps-regular-webfont.ttf);
+}
+
+@font-face {
+  font-family: FippsFilled;
+  src: url(fonts/fippsfilled-regular-webfont.ttf);
+}
+
+@font-face {
+  font-family: CyborgSister;
+  src: url(fonts/CyborgSister.ttf);
+}
+
+@font-face {
+  font-family: NeuePixelSans;
+  src: url(fonts/NeuePixelSans.ttf);
+}
+
+/* general stylin */
+
+body {
+  margin: 0;
+  auto: 0;
+  background-image: linear-gradient(0deg, #176fc2, #58c7e9);
+  background-color: #176fc2; /* #3a97ed; */
+  background-repeat: no-repeat;
+  background-size:cover;
+  overflow: hidden;
+  font-family: "CyborgSister";
+}
+
+/* svg:hover {
+    -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));      
+    filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));  
+} */
+
+/* classes */
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-35%, -60%);
+}
+
+.y_axis path {
+  display: none;
+}
+
+.y_axis line {
+  stroke: #ffffff;
+}
+
+.y_axis text {
+  fill: white;
+  text-shadow: 2px 2px rgb(27, 27, 180);
+  /* fill:rgb(255, 242, 55);
+    text-shadow: 2px 2px rgb(27, 27, 180); */
+}
+
+.x_axis path {
+  stroke: #ffffff;
+}
+
+.x_axis line {
+  stroke: #ffffff;
+}
+
+.x_axis text {
+  fill: white;
+  text-shadow: 2px 2px rgb(27, 27, 180);
+}
+
+.bar_style {
+  /* outline: 2px solid #ffffff; */
+    /* box-shadow: 2px 2px 4px rgba(27, 27, 180, .25); */
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(27, 27, 180, .25));      
+    filter: drop-shadow(2px 2px 4px rgba(27, 27, 180,.25)); 
+    background-image: url(""); 
+}
+
+.selector_outline{
+    -webkit-filter: drop-shadow(3px 3px 0px rgba(27, 27, 180, 1));   
+    filter: drop-shadow(3px 3px 0px rgba(27, 27, 180, 1)); 
+}
+
+/* .selector_outline.blendy{
+    mix-blend-mode: color-burn;
+    background-blend-mode: color-burn;
+} */
+
+.controls {
+  width: 74px;
+  height: 74px;
+}
+
+/* ids */
+
+#map {
+  float: left;
+  width: 60%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#kanto_map {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#kanto_overlay {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* .selector_outline fill{
+  mix-blend-mode: color-burn;
+} */
+
+/** width is hardcoded into scripts.js in getPlayerLeftTopPosForRegion; if changing here, make sure to change there
+initial top, left here also hardcoded for first locale **/
+#player_icon {
+  width: 4%;
+  height: auto;
+  position: absolute;
+  left: 39.9%;
+  top: 66.3%;
+  pointer-events: none;
+}
+
+#description{
+    position:absolute;
+    bottom:2%;
+    left:2%;
+    font-size: 1.4vw;
+    padding:0;
+    color: rgb(27, 27, 180);
+    pointer-events: none;
+}
+
+.whiteblue{
+    color: white;
+    text-shadow: 2px 2px rgb(27, 27, 180);
+    font-size:1.5vw;
+}
+
+.whiteblue2{
+    fill: white;
+    text-shadow: 1px 1px rgb(27, 27, 180);
+    font-size:1.2vw;
+}
+
+.blueshade{    
+    color: rgb(27, 27, 180);
+    text-shadow: 1px 1px 2px  rgba(0, 0, 0, .1);
+}
+
+.blue{
+    color: rgb(0, 102, 255);
+}
+
+.red{
+    color: rgb(216, 32, 42);
+}
+
+#buttons {
+  position: absolute;
+  bottom: 2%;
+  right: 40%;
+}
+
+#info_dump {
+  float: right;
+  width: 40%;
+}
+
+#title {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  z-index: 5;
+  text-align: left;
+  pointer-events: none;
+}
+
+#title_fill {
+  position: relative;
+  z-index: 2;
+  font-family: FippsFilled;
+  font-size: 2.9vw;
+  color: rgb(255, 242, 55);
+  text-shadow: 4px 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#title_outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  font-family: Fipps;
+  font-size: 2.9vw;
+  color: rgb(27, 27, 180);
+  pointer-events: none;
+}
+
+#names {
+  position: relative;
+  z-index: 3;
+  font-size: 2vw;
+  color: white;
+  text-shadow: 2px 2px rgb(27, 27, 180);
+  pointer-events: none;
+}
+
+#region_name {
+  font-size: 3.5vw;
+  color: white;
+  text-shadow: 2px 2px rgb(27, 27, 180);
+}
+
+#blurb {
+  font-size: 1.8vw;
+  color: rgb(27, 27, 180);
+  width: 90%;
+}
+
+#spawn_chart {
+  position: relative;
+  transform: translateX(-120px);
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  font-size: 1.3vw;
+}
+
+/* IMPORTANT: LINKS TO POKEMON IMAGES:
+https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png
+(sub 001.png for index.png of pokemon in pokedex) */
+
+/* Tooltip text */
+.tooltip .tooltiptext2 {
+    visibility: hidden;
+    max-width: 70%;
+    background-color: rgba(183, 229, 243, 0.85);
+    box-shadow: 2px 2px 6px rgba(27, 27, 180, .25);
+    color: rgb(27, 27, 180);
+    text-align: right;
+    padding: 5px 5px;
+    border-radius: 15px 6px;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    left: 0%;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* tooltips for region names */
+  .tooltip_region {
+    visibility: visible;
+    background-color: rgba(27, 27, 180, 0.85);
+    box-shadow: 2px 2px 6px rgba(27, 27, 180, .25);
+    color: rgb(255, 242, 55);
+    text-align: center;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 1.4vw;
+    display: inline-block;
+    
+    position: absolute;
+    z-index: 10;
+    top:0;
+    left:0;
+    /* -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%); */
+    transform: translate(-50%,-120%);
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+
+  /*display info about pokemon, spawns, legends:*/
+
+  #tablechan{
+      padding: 2px;
+  }
+  
+  #pokemon_sprite{
+    width:35%;
+    text-align: center;
+    background-color: rgba(183, 229, 243, 0.8);
+    box-shadow: 2px 2px 6px rgba(27, 27, 180, .25);
+    border-radius: 7px 3px;
+    
+  }
+  
+  #pokemon_info{
+      width:65%;
+      font-size: 1.2vw;
+      color: rgb(27, 27, 180);
+      text-align: left;
+      margin-left: 5%;
+      padding-left: 5%;
+  }
+
+  #helpful{
+    position: relative;
+  }
+  
+  #legend{
+      position:absolute;
+      top:10;
+      left:0;
+  }
+
+  .dot {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 20%;
+    display: inline-flex;
+    box-shadow: 2px 2px 4px rgba(27, 27, 180, .25);
+    margin-right: 10px;
+  }
+
+  .inline{
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 1.4vw;
+    color: rgb(27, 27, 180);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  #land{
+    background-color: #27d956;
+  }
+  
+  #cave{
+    background-color: #cfa737;
+  }
+
+  #fish{
+    background-color: #4ac9ff;
+  }
+
+  #surf{
+    background-color: #1742ff;
+  }
+  
+  #special{
+    background-color: #ff6421;
+  }
+  
+  
+  

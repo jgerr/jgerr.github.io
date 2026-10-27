@@ -1,94 +1,103 @@
-@font-face {
-    font-family: Redaction;
-    src: url(fonts/Redaction-Regular.otf);
-}
-@font-face {
-    font-family: Redaction;
-    src: url(fonts/Redaction-Italics.otf);
-    font-weight: italic;
-}
-@font-face {
-    font-family: Redaction;
-    src: url(fonts/Redaction-Bold.otf);
-    font-weight: bold;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 
-@font-face {
-    font-family: Lil Grotesk;
-    src: url(fonts/LilGrotesk-Regular.otf);
-}
-@font-face {
-    font-family: Lil Grotesk;
-    src: url(fonts/LilGrotesk-Bold.otf);
-    font-weight: bold;
-}
+/* ==========================================================================
+   DarkPurple variant
+   Same markup & class names as the live site — restyled only.
+   ========================================================================== */
 
-/* rainbow palette */
-/* :root {
-    --bg-color: #cfbece;
-    --tag-color-1: #EB648F;
-    --tag-color-2: #FDD945;
-    --tag-color-3: #4DA5FE;
-    --tag-color-4: #8FDE5D;
-    --tag-color-5: #c07095; 
-    --shadow-color: #60315B; 
+:root {
+    /* surfaces */
+    --bg-color: #454147;
+    --bg-color-rgb: 69, 65, 71;
+    /* transparent, so the artwork gradient can fade to the exact page colour
+       and leave no seam at the image's left edge */
+    --card-bg: transparent;
+
+    /* One warm grey carries every non-orange element: rules, bar fill, menu
+       and body copy. */
+    --fg: #9c998d;
+    --bar-color: var(--fg);
+    --bar-text-color: var(--bg-color);
+
+    /* lines */
+    --rule-color: var(--fg);
+    --rule-color-soft: var(--fg);
+
+    /* type */
+    --text-color: var(--fg);
+    --heading-color: var(--fg);
+    --menu-color: var(--fg);
     --highlight-color: #ffffff;
-    --link-color: rgb(255, 28, 141); 
-    --shadow-offset: 10px;    
-    --font-family-1: 'Gudea'; 
-    --font-family-2: 'Redaction';
-    --font-family-3: 'Lil Grotesk';
-    --top-padding: 10vw;
-    --text-color: #000000c4;
-  }   */
-  
-/* :root {
-    --bg-color: #FECFB2;
-    --tag-color-1: #eca29d;
-    --tag-color-2: #CBAAB3;
-    --tag-color-3: #8E9CCA;
-    --tag-color-4: #998bb8;
-    --tag-color-5: #A16B8D; 
-    --shadow-color: #322C56; 
-    --highlight-color: #ffffff;
-    --link-color: rgb(79, 15, 255); 
-    --link-color-2: rgb(79, 15, 255); 
-    --shadow-offset: 10px;    
-    --font-family-1: 'Gudea'; 
-    --font-family-2: 'Redaction';
-    --font-family-3: 'Lil Grotesk';
-    --top-padding: 10vw;
-    --text-color: #322C56;
-  }   */
 
+    /* orange accents (replaces the purple link colour) */
+    --link-color: #ffaa3c;
+    --link-color-2: #ffc478;
 
-  :root {
-    --bg-color: #FECFB2;
-    --tag-color-1: #ee9a94;
-    --tag-color-2: #CBAAB3;
-    --tag-color-3: #8E9CCA;
-    --tag-color-4: #aa9ace;
-    --tag-color-5: #A16B8D; 
-    --shadow-color: #322C56; 
-    --highlight-color: #ffffff;
-    --link-color: rgb(79, 15, 255);
-    --link-color-2: rgb(149, 137, 255); 
-    /* --link-color-2: rgb(198, 188, 228);  */
-    --shadow-offset: 10px;    
-    --font-family-1: 'Gudea'; 
-    --font-family-2: 'Redaction';
-    --font-family-3: 'Lil Grotesk';
-    --top-padding: 10vw;
-    --text-color: #322C56;
-  }  
+    /* the old tag-* hooks still exist in the markup; neutralised here so the
+       cards read as outlined panels instead of filled blocks */
+    --tag-color-1: #5a5162;
+    --tag-color-2: #544c5c;
+    --tag-color-3: #4f4857;
+    --tag-color-4: #574e60;
+    --tag-color-5: #5c5366;
+    --shadow-color: #322c3c;
+    --shadow-offset: 10px;
 
+    /* Roboto Mono carries no emoji glyphs — nothing does, really — so the
+       system emoji face is named explicitly as a fallback. */
+    --emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-family-1: 'Roboto', 'Gudea', Helvetica, Arial, var(--emoji), sans-serif;
+    --font-family-2: 'Roboto Mono', ui-monospace, var(--emoji), monospace;
+    --font-family-3: 'Roboto Mono', ui-monospace, var(--emoji), monospace;
+
+    --top-padding: 5vw;
+    --card-gap: 34px;
+    --card-pad-x: 22px;
+    --card-pad-y: 18px;
+    --border-w: 3px;
+    /* artwork geometry — one set of numbers drives both the single-image rows
+       and the gallery, so every offset on the page steps by the same amount */
+    --media-w: 43%;          /* artwork width, as a share of the content column */
+    --media-overlap: 29%;    /* how far it sits back over its panel */
+    --media-gap: 16px;
+    --media-drop: 30px;      /* clearance below the panel's top edge */
+    /* how far a panel title is lifted onto its top rule — smaller value sits
+       the text lower, so the rule crosses nearer its cap height */
+    --legend-lift: 0.45em;
+
+    /* The artwork fade, in both directions. Stops approximate an ease-out —
+       a plain two-stop ramp leaves a visible band where it begins. Defined
+       once here because side-by-side cards fade right and stacked cards fade
+       down, and the two must match exactly. */
+    --fade-stops:
+        rgb(var(--bg-color-rgb)) 0%,
+        rgb(var(--bg-color-rgb)) 2%,
+        rgba(var(--bg-color-rgb), 0.93) 7%,
+        rgba(var(--bg-color-rgb), 0.74) 13%,
+        rgba(var(--bg-color-rgb), 0.46) 19%,
+        rgba(var(--bg-color-rgb), 0.20) 25%,
+        rgba(var(--bg-color-rgb), 0) 31%;
+}
+
+/* `clip` rather than `hidden`: it suppresses stray horizontal overflow without
+   creating a scroll container, which would break the sticky side nav. */
+html {
+    overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
     background-color: var(--bg-color);
-	color: var(--text-color);
+    color: var(--text-color);
     font-family: var(--font-family-1);
-    padding: 0;
-    max-width: 1100px; 
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 1180px;
     margin: 0 auto;
     padding: var(--top-padding) 0 0 0;
 }
@@ -97,534 +106,142 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-ul{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 1.5em;
-}
-
-p{
-    margin-top: 13px;
-    margin-bottom: 13px;
-}
-
-iframe {
-    width: 100%;           /* Fills the width of the parent container */
-    height: auto;          /* Height adjusts automatically */
-    aspect-ratio: 16 / 9;  /* Maintains a 16:9 aspect ratio */
+    align-items: flex-start;
 }
 
 .main {
-    margin: 0px 20px 10px 20px;
-    /* padding: var(--top-padding) 0 0 0; */
+    margin: 0 20px 10px 20px;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-width: 0;
 }
 
-.infocard{
-    padding: 0 auto;
-    /* padding: 0px 0px 0px 10px; */
-    margin: 0px 0 30px 0;
-    display: flex;
-    flex-direction: row;
+ul {
+    margin: 10px 0;
+    padding-left: 1.4em;
 }
 
-.infofull{
-    padding: 0 auto;
-    margin: 0px 0 30px 0;
-    display: flex;
-    flex-direction: column;
+li {
+    margin: 4px 0;
 }
 
-.card_body{
-    min-width: 60%;
-    max-width:100%;
+p {
+    margin: 13px 0;
 }
 
-.card_img{
-    max-width: 40%;
-}
-.card_img2{
-    max-width: 100%;
+b, strong {
+    color: var(--heading-color);
+    font-weight: 700;
 }
 
-.cardimg {
-    width: 100%;
-    /* height: 100%; */
-    object-fit: cover;
+/* bold inside a link must not repaint over the link colour */
+a b,
+a strong {
+    color: inherit;
 }
 
-.halfcardimg {
-    width: 50%;
-    /* height: 100%; */
-    object-fit: cover;
+iframe {
+    width: calc(100% - 2 * var(--card-pad-x));
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--rule-color-soft);
+    display: block;
+    margin: 10px var(--card-pad-x);
 }
 
-.card_title{
-    font-family: var(--font-family-3);
-    font-weight: bold;
-    font-size: calc(24px + .8vw);
-    padding: 10px 10px 10px 10px;
-}
+/* ==========================================================================
+   Side navigation (desktop)
+   ========================================================================== */
 
-.card_1ptitle{
-    font-family: var(--font-family-3);
-    font-weight: bold;
-    /* font-size: calc(36px + .8vw); */
-    font-size: calc(24px + .8vw);
-    padding: 10px 20px 10px 10px;
-}
-
-.card_subtitle{
-    font-family: var(--font-family-3);
-    font-weight: bold;
-    font-size: calc(22px + .8vw);
-    padding: 10px 20px 10px 20px;
-}
-
-.card_subsubtitle{
-    font-family: var(--font-family-3);
-    font-weight: bold;
-    font-size: calc(16px + .8vw);
-    padding: 10px 20px 10px 20px;
-}
-
-.card_subtitle_regular{
-    font-family: var(--font-family-3);
-    font-weight: normal;
-    font-size: calc(18px + .8vw);
-    padding: 10px 20px 10px 20px;
-}
-
-.card_text{
-    font-family: var(--font-family-1);
-    font-size: calc(14px + .6vw);
-    padding: 0 20px 20px 20px;
-}
-
-.card_text_link{
-    color: var(--link-color-2);
-}
-
-.tag-1{    
-    background-color: var(--tag-color-1);
-    /* width: 80%; */
-}
-
-.tag-2{    
-    background-color: var(--tag-color-2);
-    /* width: 100%; */
-}
-
-.tag-3{    
-    background-color: var(--tag-color-3);
-}
-
-.tag-4{    
-    background-color: var(--tag-color-4);
-}
-
-.shadow{    
-    box-shadow: var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--shadow-color);
-}
-
-.shadow-static{    
-    box-shadow: var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--shadow-color);
-}
-
-/* animation: glow 1s infinite alternate; */
-/* animation: shine4 1s; */
-
-/* .shadow:hover{
-    animation: white-shadow .5s;
-    animation-fill-mode: forwards;
-}
-
-.shadow:hover .highlight{
-    animation: white-highlight .5s;
-    animation-fill-mode: forwards;
-} */
-
-.highlight:hover {
-    animation: white-highlight .5s;
-    animation-fill-mode: forwards;
-}
-
-.highlight:hover .shadow{
-    animation: white-shadow .5s;
-    animation-fill-mode: forwards;
-}
-
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px -10px #aef4af;
-  }
-  to {
-    box-shadow: 0 0 10px 10px #aef4af;
-  }
-}
-
-@keyframes white-shadow {
-    from {
-        box-shadow: var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--shadow-color);
-    }
-    to {
-        box-shadow: var(--shadow-offset) calc(var(--shadow-offset)*1.25) #ffffff;
-    }
-}
-
-@keyframes white-shadow-menu {
-    from {
-        box-shadow: var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--shadow-color);
-    }
-    to {
-        box-shadow: var(--shadow-offset) calc(var(--shadow-offset)*1.25) #ffffff;
-    }
-}
-
-@keyframes white-highlight {
-    from {
-        background-color: #ffffff00;
-    }
-    to {
-        background-color: #ffffff;
-    }
-}
-
-@keyframes shine {
-    0% {
-        box-shadow:  
-        calc(var(--shadow-offset)* 1/5) calc(var(--shadow-offset)*1.25 * 1/5) var(--tag-color-4), 
-        calc(var(--shadow-offset)* 2/5) calc(var(--shadow-offset)*1.25 * 2/5) var(--tag-color-3),
-        calc(var(--shadow-offset)* 3/5) calc(var(--shadow-offset)*1.25 * 3/5) var(--tag-color-2),
-        calc(var(--shadow-offset)* 4/5) calc(var(--shadow-offset)*1.25 * 4/5) var(--tag-color-1), 
-        var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--shadow-color); 
-    }
-    25% { box-shadow:
-        calc(var(--shadow-offset)* 1/5) calc(var(--shadow-offset)*1.25 * 1/5) var(--tag-color-3), 
-        calc(var(--shadow-offset)* 2/5) calc(var(--shadow-offset)*1.25 * 2/5) var(--tag-color-2), 
-        calc(var(--shadow-offset)* 3/5) calc(var(--shadow-offset)*1.25 * 3/5) var(--tag-color-1),
-        calc(var(--shadow-offset)* 4/5) calc(var(--shadow-offset)*1.25 * 4/5) var(--shadow-color),
-        var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--tag-color-4); 
-    }
-    50% {
-        box-shadow: 
-        calc(var(--shadow-offset)* 1/5) calc(var(--shadow-offset)*1.25 * 1/5) var(--tag-color-2),
-        calc(var(--shadow-offset)* 2/5) calc(var(--shadow-offset)*1.25 * 2/5) var(--tag-color-1), 
-        calc(var(--shadow-offset)* 3/5) calc(var(--shadow-offset)*1.25 * 3/5) var(--shadow-color), 
-        calc(var(--shadow-offset)* 4/5) calc(var(--shadow-offset)*1.25 * 4/5) var(--tag-color-4), 
-        var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--tag-color-3); 
-    }
-    75% {
-        box-shadow: 
-        calc(var(--shadow-offset)* 1/5) calc(var(--shadow-offset)*1.25 * 1/5) var(--tag-color-1),
-        calc(var(--shadow-offset)* 2/5) calc(var(--shadow-offset)*1.25 * 2/5) var(--shadow-color), 
-        calc(var(--shadow-offset)* 3/5) calc(var(--shadow-offset)*1.25 * 3/5) var(--tag-color-4), 
-        calc(var(--shadow-offset)* 4/5) calc(var(--shadow-offset)*1.25 * 4/5) var(--tag-color-3), 
-        var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--tag-color-2); 
-    }
-    100% {box-shadow: 
-        calc(var(--shadow-offset)* 1/5) calc(var(--shadow-offset)*1.25 * 1/5) var(--shadow-color),
-        calc(var(--shadow-offset)* 2/5) calc(var(--shadow-offset)*1.25 * 2/5) var(--tag-color-4), 
-        calc(var(--shadow-offset)* 3/5) calc(var(--shadow-offset)*1.25 * 3/5) var(--tag-color-3), 
-        calc(var(--shadow-offset)* 4/5) calc(var(--shadow-offset)*1.25 * 4/5) var(--tag-color-2), 
-        var(--shadow-offset) calc(var(--shadow-offset)*1.25) var(--tag-color-1); 
-    }
-  }
-
-  
-@keyframes shine4 {
-    0% {
-        box-shadow:  
-        calc(var(--shadow-offset)* 1/4) calc(var(--shadow-offset)*1.25 * 1/4) var(--tag-color-4), 
-        calc(var(--shadow-offset)* 2/4) calc(var(--shadow-offset)*1.25 * 2/4) var(--tag-color-3),
-        calc(var(--shadow-offset)* 3/4) calc(var(--shadow-offset)*1.25 * 3/4) var(--tag-color-2),
-        calc(var(--shadow-offset)* 4/4) calc(var(--shadow-offset)*1.25 * 4/4) var(--tag-color-1); 
-    }
-    33% { box-shadow:
-        calc(var(--shadow-offset)* 1/4) calc(var(--shadow-offset)*1.25 * 1/4) var(--tag-color-3), 
-        calc(var(--shadow-offset)* 2/4) calc(var(--shadow-offset)*1.25 * 2/4) var(--tag-color-2), 
-        calc(var(--shadow-offset)* 3/4) calc(var(--shadow-offset)*1.25 * 3/4) var(--tag-color-1),
-        calc(var(--shadow-offset)* 4/4) calc(var(--shadow-offset)*1.25 * 4/4) var(--tag-color-4); 
-    }
-    66% {
-        box-shadow: 
-        calc(var(--shadow-offset)* 1/4) calc(var(--shadow-offset)*1.25 * 1/4) var(--tag-color-2),
-        calc(var(--shadow-offset)* 2/4) calc(var(--shadow-offset)*1.25 * 2/4) var(--tag-color-1), 
-        calc(var(--shadow-offset)* 3/4) calc(var(--shadow-offset)*1.25 * 3/4) var(--tag-color-4), 
-        calc(var(--shadow-offset)* 4/4) calc(var(--shadow-offset)*1.25 * 4/4) var(--tag-color-3); 
-    }
-    100% {
-        box-shadow: 
-        calc(var(--shadow-offset)* 1/4) calc(var(--shadow-offset)*1.25 * 1/4) var(--tag-color-1),
-        calc(var(--shadow-offset)* 2/4) calc(var(--shadow-offset)*1.25 * 2/4) var(--tag-color-4), 
-        calc(var(--shadow-offset)* 3/4) calc(var(--shadow-offset)*1.25 * 3/4) var(--tag-color-3), 
-        calc(var(--shadow-offset)* 4/4) calc(var(--shadow-offset)*1.25 * 4/4) var(--tag-color-2); 
-    }
-  }
-
-.shadow-1{    
-    box-shadow: 0 calc(var(--shadow-offset)*.75) var(--tag-color-1);
-    color: var(--tag-color-1);
-}
-
-.shadow-2{    
-    box-shadow: 0 calc(var(--shadow-offset)*.75) var(--tag-color-2);
-    color: var(--tag-color-2);
-}
-
-.shadow-3{    
-    box-shadow: 0 calc(var(--shadow-offset)*.75) var(--tag-color-3);
-    color: var(--tag-color-3);
-}
-
-.shadow-4{    
-    box-shadow: 0 calc(var(--shadow-offset)*.75) var(--tag-color-4);
-    color: var(--tag-color-4);
-}
-
-.shadow-5{    
-    box-shadow: 0 calc(var(--shadow-offset)*.75) var(--tag-color-5);
-    color: var(--tag-color-5);
-}
-
-.shadow-selected{    
-    /* box-shadow: 0 calc(var(--shadow-offset)*.75) var(--highlight-color); */
-    color: var(--highlight-color);
-}
-
-.desktop_menu_item:hover{
-    box-shadow: 0 calc(var(--shadow-offset)*.75) var(--highlight-color);
-    color: var(--highlight-color);
-}
-
-#desktop_menu{
+#desktop_menu {
     display: flex;
     flex-direction: column;
-    max-width: 25%;
-    padding:  0 0 0 20px;
     align-items: flex-end;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 20px; 
-    align-self: flex-start;
-}
-
-.desktop_menu_item{
-    background-color: var(--shadow-color);
-    padding:  5px 10px 5px 10px;
-    margin: 0px 0 20px 0;
-    width: fit-content;
-    white-space: nowrap;
-    block-size: fit-content;
-    
-    font-family: var(--font-family-3);
-    font-weight: bold;
-    font-size: calc(16px + 0.5vw);
-}
-
-/* unvisited link */
-a:link {
-    /* color: var(--text-color); */
-    color: var(--link-color);
-    text-decoration: none;
-  }
-  
-/* visited link */
-a:visited {
-    color: var(--link-color);
-    /* color: rgb(255, 28, 141); */
-    text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-    color: var(--link-color);
-    text-decoration: underline;
-}
-
-/* selected link */
-a:active {
-    color: var(--link-color);
-    text-decoration: none;
-/* text-decoration: underline; */
-}
-
-.row_dt_col_mob {
-    display: flex;
-    flex-direction: row;
-    /* flex-direction: column; */
     justify-content: center;
+    max-width: 25%;
+    padding: 24px 18px 24px 20px;
+    position: sticky;
+    top: 24px;
+    align-self: flex-start;
+    border-right: var(--border-w) solid var(--rule-color);
 }
 
-@media screen and (max-width: 700px) {
-    .card_body, .card_img {
-      /* width: 100%;  */
-      /* The width is 100%, when the viewport is 800px or smaller */
-      max-width: 100%;
-      min-width: 100%;
-    }
-    .infocard{
-        flex-direction: column;
-    }
-    main{
-        flex-direction: column;
-    }
-
-    .row_dt_col_mob {
-        display: flex;
-        /* flex-direction: row; */
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    #desktop_menu{
-        flex-direction: row;
-        max-width: 100%;
-        padding:  0 0 0 20px;
-        position: relative;
-        top: 0;
-        align-self: auto;
-    }
-    .desktop_menu_item{
-        margin: 0 10px 20px 0;
-    }
-
-    /* #desktop_menu{
-        visibility: hidden;
-        width: 0%;
-        padding:  0 0 0 0;
-    } */
-
-    .infocard-featured {
-        height: 100vw;
-        overflow: hidden;
-    }
-
-    .card_img-featured {
-        height: 100%;
-    }
-
-    .card_img-featured .cardimg {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-  }
-
-  .footer{
-      padding: 20px 20px 20px 20px;
-      text-align: center;
-      font-size: calc(10px + .8vw);
-  }
-  
-.menu-link:hover{
-    text-decoration: none;
-}
-
-.menu-link:visited{
-    text-decoration: none;
-}
-
-.title-link:link{
-    color: var(--text-color);
-    text-decoration: underline;
-}
-.title-link:visited{
-    color: var(--text-color);
-}
-.title-link:hover{
-    /* text-decoration: none; */
-    color: var(--text-color);
-}
-
-/* Featured card variant - full-width image with overlaid title and text */
-.infocard-featured {
-    margin: 0px 0 30px 0;
-    position: relative;
-    overflow: visible;
-    transition: transform 0.2s ease;
-}
-
-.infocard-featured:has(.title-link):hover {
-    transform: translateX( 18px );
-}
-
-.infocard-featured .title-link::after {
+/* bracket ticks turn back over the menu, so the shape opens leftward: ] */
+#desktop_menu::before,
+#desktop_menu::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 1;
+    width: 28px;
+    height: var(--border-w);
+    background-color: var(--rule-color);
 }
 
-.infocard-featured .card_text-featured a {
-    position: relative;
-    z-index: 2;
-}
+#desktop_menu::before { top: 0; }
+#desktop_menu::after  { bottom: 0; }
 
-.card_img-featured {
-    width: 100%;
-}
+.desktop_menu_item {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--menu-color);
+    padding: 0;
+    margin: 0 0 9px 0;
+    width: fit-content;
+    white-space: nowrap;
+    text-align: right;
 
-.card_img-featured .cardimg {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-.card_body-featured {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* background: linear-gradient(to bottom, rgba(103, 94, 157, 0), rgba(103, 94, 157, 0.25), rgba(103, 94, 157, 0.75), rgba(103, 94, 157, 1)); */
-    /* background: linear-gradient(to bottom, rgba(157,100,100, 0), rgba(157,100,100, 0.25), rgba(157,100,100, 0.75), rgba(157,100,100, 1)); */
-    /* background: linear-gradient(to bottom, rgba(50,44,86, 0), rgba(50,44,86, 0.25), rgba(50,44,86, 0.75), rgba(50,44,86, 0.95)); */
-    background: linear-gradient(to bottom, rgba(50,44,86, 0), rgba(50,44,86, 0), rgba(50,44,86, 0.95));
-}
-
-.card_body-featured-dark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(50,44,86, 0), rgba(50,44,86, 0), rgba(50,44,86, 0.7), rgba(50,44,86, 0.95));
-}
-
-.card_title-featured {
     font-family: var(--font-family-3);
-    font-weight: bold;
-    font-size: calc(24px + .8vw);
-    padding: 0px;
-    margin: 20px 0px 0px -8px;
+    font-weight: 700;
+    /* the inherited 1.55 body leading was doing most of the spacing here */
+    line-height: 1.2;
+    font-size: clamp(15px, 0.45vw + 13px, 21px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.18s ease;
 }
 
-.card_title-featured .highlight {
-    /* background-color: var(--tag-color-1); */
-    padding: 5px 10px;
-    /* display:contents */
+/* colour-coded menu shadows from the original palette are flattened here */
+.shadow-1, .shadow-2, .shadow-3, .shadow-4, .shadow-5 {
+    box-shadow: none;
+    color: var(--menu-color);
 }
 
-.card_text-featured {
-    font-family: var(--font-family-1);
-    font-size: calc(14px + .6vw);
-    padding: 20px;
-    color: #FFFFFF;
+.shadow-selected {
+    color: var(--highlight-color);
+}
+
+.desktop_menu_item:hover {
+    box-shadow: none;
+    color: var(--link-color);
+}
+
+.menu-link,
+.menu-link:link,
+.menu-link:visited,
+.menu-link:hover,
+.menu-link:active {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+a:link,
+a:visited {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-color-2);
+    text-decoration: underline;
+}
+
+a:active {
+    color: var(--link-color-2);
+    text-decoration: none;
 }
 
 a.card_text_link,
@@ -633,20 +250,920 @@ a.card_text_link:visited {
     color: var(--link-color-2);
 }
 
-.page_section {
-    font-size: calc(20px + .6vw);
-    font-weight:lighter;
-    padding: 30px 0px;
-    /* margin-top: 12px; */
-    overflow: hidden;
+a.card_text_link:hover {
+    color: var(--link-color);
+}
+
+.title-link,
+.title-link:link,
+.title-link:visited {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.title-link:hover {
+    color: var(--link-color-2);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Outlined panels — the "fieldset + legend" look
+   ========================================================================== */
+
+.infocard,
+.infofull {
+    position: relative;
+    margin: 0 0 var(--card-gap) 0;
+    padding: var(--card-pad-y) 0;
+    border: var(--border-w) solid var(--rule-color-soft);
+    background-color: var(--card-bg);
+    box-shadow: none;
+}
+
+.infocard {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: row;
+}
+
+.infofull {
+    display: flex;
+    flex-direction: column;
+}
+
+/* the old filled-tag + drop-shadow treatments are no-ops in this variant */
+.tag-1, .tag-2, .tag-3, .tag-4 {
+    background-color: transparent;
+}
+
+.shadow,
+.shadow-static {
+    box-shadow: none;
+}
+
+.card_body {
+    min-width: 60%;
+    max-width: 100%;
+    flex: 1;
+    min-width: 0;
+}
+
+.card_img {
+    max-width: 40%;
+}
+
+/* Artwork inside a panel spans the panel's full inner width and carries no
+   outline of its own — the panel's own rule already frames it. */
+.card_img2 {
+    max-width: 100%;
+    padding: 12px 0 0 0;
+}
+
+.cardimg {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* A panel holding nothing but artwork becomes a frame for it: no padding at
+   all, so the image sits flush inside the rule. */
+.infofull:has(> .card_body > .card_img2:only-child) {
+    padding: 0;
+}
+
+.infofull > .card_body > .card_img2:only-child {
+    padding: 0;
+}
+
+
+.halfcardimg {
+    width: 50%;
+    object-fit: cover;
+}
+
+/* ---- headings -------------------------------------------------------- */
+
+.card_title,
+.card_1ptitle,
+.card_subtitle,
+.card_subsubtitle,
+.card_subtitle_regular {
+    font-family: var(--font-family-3);
+    font-weight: 700;
+    color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    line-height: 1.15;
+    padding: 0 var(--card-pad-x);
+}
+
+.card_title,
+.card_1ptitle   { font-size: clamp(19px, 0.8vw + 15px, 29px); }
+.card_subtitle  { font-size: clamp(18px, 0.7vw + 14px, 27px); }
+.card_subsubtitle { font-size: clamp(15px, 0.5vw + 13px, 21px); }
+
+.card_subtitle_regular {
+    font-weight: 400;
+    font-size: clamp(14px, 0.4vw + 12px, 19px);
+    letter-spacing: 0.06em;
+    text-transform: none;
+}
+
+/* A title that opens a panel is lifted onto the top border and given the page
+   background, so the rule appears to break around it. */
+.infocard > .card_body > .card_title:first-child,
+.infocard > .card_body > .card_1ptitle:first-child,
+.infocard > .card_body > .card_subtitle:first-child,
+.infofull > .card_body > .card_title:first-child,
+.infofull > .card_body > .card_1ptitle:first-child,
+.infofull > .card_body > .card_subtitle:first-child {
+    /* half the rule's weight keeps the text centred on it as it thickens */
+    margin-top: calc(-1 * var(--card-pad-y) - var(--legend-lift) - var(--border-w) / 2);
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.infocard > .card_body > .card_title:first-child > span,
+.infocard > .card_body > .card_1ptitle:first-child > span,
+.infocard > .card_body > .card_subtitle:first-child > span,
+.infofull > .card_body > .card_title:first-child > span,
+.infofull > .card_body > .card_1ptitle:first-child > span,
+.infofull > .card_body > .card_subtitle:first-child > span {
+    background-color: var(--bg-color);
+    padding: 1px 12px;
+    margin-left: 10px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+/* allsfair.html has one spacer heading with an empty <span> — don't punch a
+   hole in the border for it */
+.card_subtitle:has(> span:empty) {
+    display: none;
+}
+
+/* ---- intro panel ------------------------------------------------------
+   Inverted treatment for the opening card of a page: the accent becomes the
+   fill and the page colour becomes the type. The heading is lifted over the
+   box's top edge exactly as the outlined panels lift theirs, but filled in
+   orange — a folder tab protruding from the panel rather than a label
+   sitting on a rule.
+   These rules intentionally follow the outlined-panel rules above and match
+   their specificity, so they override on source order. */
+
+.infocard-intro {
+    background-color: var(--fg);
+    color: var(--bg-color);
+    border: 0;
+    padding: var(--card-pad-y) 0 18px 0;
+}
+
+.infocard-intro > .card_body > .card_title:first-child,
+.infocard-intro > .card_body > .card_1ptitle:first-child,
+.infocard-intro > .card_body > .card_subtitle:first-child {
+    margin-top: calc(-1 * var(--card-pad-y) - var(--legend-lift) - var(--border-w) / 2);
+    padding: 0;
+}
+
+/* The Call of Duty pages are the only ones that open on a card_subtitle. With
+   the "Call of Duty:" prefix dropped, the remaining title carries the card on
+   its own and takes a larger size. The lift above is in em, so the tab stays
+   correctly seated as this grows. */
+.infocard-intro > .card_body > .card_subtitle:first-child {
+    font-size: clamp(26px, 1vw + 20px, 40px);
+}
+
+.infocard-intro > .card_body > .card_title:first-child > span,
+.infocard-intro > .card_body > .card_1ptitle:first-child > span,
+.infocard-intro > .card_body > .card_subtitle:first-child > span {
+    display: inline-block;
+    background-color: var(--link-color);
+    color: var(--bg-color);
+    padding: 7px 12px;
+    /* inset from the corner, matching the outlined panels' titles */
+    margin-left: 10px;
+}
+
+.infocard-intro .card_text {
+    color: var(--bg-color);
+    padding: 14px var(--card-pad-x) 0 var(--card-pad-x);
+}
+
+/* b/strong default to --fg, which is this panel's own fill — invisible here */
+.infocard-intro b,
+.infocard-intro strong {
+    color: var(--bg-color);
+}
+
+/* the three lines read as one block, not spaced-out paragraphs */
+.infocard-intro .card_text p {
+    margin: 0;
+}
+
+.infocard-intro a,
+.infocard-intro a:link,
+.infocard-intro a:visited,
+.infocard-intro a:hover,
+.infocard-intro a:active {
+    color: var(--bg-color);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.infocard-intro .title-link,
+.infocard-intro .title-link:link,
+.infocard-intro .title-link:visited,
+.infocard-intro .title-link:hover,
+.infocard-intro .title-link:active {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+/* ---- body copy ------------------------------------------------------- */
+
+.card_text {
+    font-family: var(--font-family-1);
+    font-size: clamp(15px, 0.25vw + 14px, 18px);
+    padding: 16px var(--card-pad-x) 6px var(--card-pad-x);
+}
+
+.card_text:last-child {
+    padding-bottom: 0;
+}
+
+/* A panel with no heading opens straight onto its copy — the extra top padding
+   that normally sits under a title would leave it lopsided against the bottom. */
+.infofull > .card_body > .card_text:first-child,
+.infocard > .card_body > .card_text:first-child {
+    padding-top: 0;
+}
+
+/* ==========================================================================
+   Featured cards — copy on the left, artwork fading in from the right
+   ========================================================================== */
+
+.infocard-featured {
+    position: relative;
+    display: flex;
+    margin: 0 0 var(--card-gap) 0;
+    padding: var(--card-pad-y) 0;
+    border: 0;
+    background-color: var(--card-bg);
+    box-shadow: none;
+    overflow: visible;
+    /* ~0.26 of the content column's width, which is the card's height:width
+       ratio in the reference layout */
+    min-height: 260px;
+    transition: transform 0.22s ease;
+}
+
+/* The outline is a pseudo-element rather than a real border so it can be
+   layered *over* the artwork (z 5) while the copy column still sits above it
+   (z 6) and punches the title through the top edge. */
+.infocard-featured::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: var(--border-w) solid var(--rule-color-soft);
+    pointer-events: none;
+    z-index: 5;
+    transition: border-color 0.22s ease;
+}
+
+.infocard-featured:has(.title-link):hover {
+    transform: translateX(14px);
+}
+
+.infocard-featured:has(.title-link):hover::before {
+    border-color: var(--link-color);
+}
+
+/* whole-card click target, as before */
+.infocard-featured .title-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+/* inline links inside the blurb must stay clickable above that overlay */
+.infocard-featured .card_text-featured a {
+    position: relative;
+    z-index: 4;
+}
+
+.card_img-featured {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 50%;
+    /* object-fit: cover never paints outside the box, so nothing needs
+       clipping here — and leaving it visible lets the fade overhang the
+       artwork's left edge (below) instead of being cut off exactly on it. */
+    overflow: visible;
+    z-index: 1;
+}
+
+.card_img-featured .cardimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Fully opaque exactly at the artwork's left edge, easing out by ~25% of its
+   width — so the hard edge of the image is never visible through the fade.
+   The intermediate stops approximate an ease-out curve; a plain two-stop
+   linear gradient leaves a faint band where the ramp begins. */
+.card_img-featured::after {
+    content: "";
+    position: absolute;
+    /* starts 4px left of the artwork so sub-pixel rounding can never leave a
+       sliver of un-faded image at the seam */
+    inset: 0 0 0 -4px;
+    background:
+        linear-gradient(to right,
+            rgb(var(--bg-color-rgb)) 0%,
+            rgb(var(--bg-color-rgb)) 2%,
+            rgba(var(--bg-color-rgb), 0.93) 6%,
+            rgba(var(--bg-color-rgb), 0.74) 11%,
+            rgba(var(--bg-color-rgb), 0.46) 16%,
+            rgba(var(--bg-color-rgb), 0.20) 21%,
+            rgba(var(--bg-color-rgb), 0) 26%);
+}
+
+.card_body-featured,
+.card_body-featured-dark {
+    /* Deliberately NOT position: relative. z-index still applies because this
+       is a flex item, and leaving it unpositioned lets .title-link::after
+       resolve against the card itself — so the whole-card click target covers
+       the artwork too, not just the copy column. */
+    z-index: 6;
+    width: 58%;
+    /* keep an over-wide title from stretching the card past its column */
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    top: auto;
+    left: auto;
+    height: auto;
+    justify-content: flex-start;
+}
+
+.card_title-featured {
+    font-family: var(--font-family-3);
+    font-weight: 700;
+    font-size: clamp(24px, 0.85vw + 16px, 32px);
+    letter-spacing: 0.11em;
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    padding: 0;
+    margin: calc(-1 * var(--card-pad-y) - var(--legend-lift) - var(--border-w) / 2) 0 0 0;
+    /* allowed to run a little past the copy column (over the artwork), the way
+       the long titles do in the reference layout */
+    align-self: flex-start;
+    width: max-content;
+    max-width: 150%;
+}
+
+.card_title-featured .highlight,
+.card_title .highlight {
+    background-color: var(--bg-color);
+    padding: 1px 12px;
+    margin-left: 10px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.highlight:hover {
+    animation: none;
+}
+
+/* --- two-line titles (the Call of Duty cards) --------------------------
+   "CALL OF DUTY:" stays at body-title size in muted grey; the game name
+   drops to its own line, larger and in orange. Each line carries its own
+   background so line 1 can break the card outline. */
+.card_title-featured.title-split .highlight {
+    background: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+.card_title-featured.title-split .title-link {
+    display: block;
+}
+
+.title-prefix,
+.title-main {
+    display: block;
+    width: fit-content;
+    padding: 1px 12px;
+    margin-left: 10px;
+}
+
+/* only the first line crosses the card outline, so only it needs a backing —
+   a solid box behind the game name would show as a rectangle over the art */
+.title-prefix {
+    font-size: 1em;
+    color: var(--heading-color);
+    background-color: var(--bg-color);
+}
+
+.title-main {
+    font-size: 1.75em;
+    color: var(--link-color);
+    line-height: 1.1;
+}
+
+.infocard-featured:hover .title-main {
+    color: var(--link-color-2);
+}
+
+/* role / date line under a card title */
+.card_role {
+    font-family: var(--font-family-1);
+    font-style: italic;
+    opacity: 0.75;
+    /* a step above .card_text-featured */
+    font-size: clamp(17px, 0.3vw + 16px, 22px);
+    line-height: 1.3;
+    padding: 7px var(--card-pad-x) 0 var(--card-pad-x);
+}
+
+.card_text-featured {
+    font-family: var(--font-family-1);
+    font-size: clamp(16px, 0.28vw + 15px, 20px);
+    padding: 13px var(--card-pad-x) 0 var(--card-pad-x);
+    color: var(--text-color);
+}
+
+/* a card carrying a role line has one more stacked element than the rest, so
+   it needs less headroom to sit level with its neighbours */
+.infocard-featured:has(> .card_body-featured > .card_role) .card_text-featured {
+    padding-top: 11px;
+}
+
+/* ==========================================================================
+   Two-column card grid — project cards stack vertically inside each column,
+   the same arrangement the full-width cards take on mobile
+   ========================================================================== */
+
+.card_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* A wrapped title grows up out of its card, so rows need a full extra
+       title line between them or the overflow lands on the card above. */
+    column-gap: var(--card-gap);
+    row-gap: calc(var(--card-gap) + 40px);
+    margin: 40px 0 var(--card-gap) 0;
+    /* default stretch: both cards in a row match the taller one */
+}
+
+.card_grid .infocard-featured {
+    flex-direction: column;
+    min-height: 0;
+    margin: 0;
+}
+
+.card_grid .card_body-featured,
+.card_grid .card_body-featured-dark {
+    width: 100%;
+    order: 1;
+    /* soaks up the slack in a stretched card so the artwork stays pinned to
+       the bottom rule instead of floating under the copy */
+    flex: 1 1 auto;
+}
+
+/* The title box is locked to a single line's height and its content is
+   bottom-aligned, so a title that wraps grows *upward* out of the card. The
+   last line always lands on the top rule and the card's height never moves. */
+.card_grid .card_title-featured {
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: flex-end;
+    height: 1.15em;
+}
+
+/* The highlight span is this flex container's item, so it is blockified — a
+   background on it would be one rectangle wide enough to mask the whole top
+   rule. Putting the background on the inline link inside instead lets each
+   wrapped line carry its own box, so the rule is only broken where text
+   actually crosses it. */
+.card_grid .card_title-featured .highlight {
+    background: none;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.card_grid .card_title-featured .title-link {
+    background-color: var(--bg-color);
+    padding: 1px 12px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.card_grid .card_img-featured {
+    position: relative;
+    width: auto;
+    height: auto;
+    order: 2;
+    /* flush to the card's side rules and down onto the bottom one */
+    margin: 18px 0 calc(-1 * var(--card-pad-y)) 0;
+    overflow: hidden;
+}
+
+/* a fixed ratio keeps the two columns roughly level despite the source art
+   varying from 16:9 to 2:1, and reserves the space before the GIF decodes */
+.card_grid .card_img-featured .cardimg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card_grid .card_img-featured::after {
+    inset: 0;
+    background: linear-gradient(to bottom, var(--fade-stops));
+}
+
+/* ==========================================================================
+   Content sections — panel on the left, artwork stepped out to the right
+   ========================================================================== */
+
+.section_row {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 var(--card-gap) 0;
+}
+
+/* the panel never spans the full column — the artwork claims the right edge */
+.section_row > .infofull,
+.section_row > .infocard,
+.section_row > .infocard-intro {
+    width: 86%;
+    flex: none;
+    margin-bottom: 0;
+}
+
+.section_media {
+    width: var(--media-w);
+    flex: none;
+    /* pulled back over the panel so the two overlap */
+    margin: var(--media-drop) 0 0 calc(-1 * var(--media-overlap));
+    position: relative;
+    z-index: 2;
+}
+
+.section_media img,
+.section_media video {
+    width: 100%;
+    display: block;
+    border: var(--border-w) solid var(--rule-color-soft);
+}
+
+/* two clips stacked in the right-hand column instead of one */
+.section_media-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--media-gap);
+}
+
+/* The panel's rule runs the full width behind the artwork, but its copy has to
+   stop short of it — otherwise the overlap swallows the end of every line.
+   Only .card_text takes the inset; a nested list is already bounded by it, and
+   padding both would narrow the list twice over. */
+.section_row:has(> .section_media) .card_text {
+    padding-right: 38%;
+}
+
+/* Staggered gallery. Width is derived so each tile lands on exactly --media-w,
+   the same size a single-image row uses — otherwise the two kinds of section
+   read as slightly different scales. */
+.media_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--media-gap);
+    width: calc(2 * var(--media-w) + var(--media-gap));
+    margin: 0 0 var(--card-gap) auto;
+}
+
+.media_grid img,
+.media_grid video {
+    width: 100%;
+    display: block;
+    border: var(--border-w) solid var(--rule-color-soft);
+}
+
+/* second row steps back left by a quarter tile; transform rather than margin
+   so the tiles keep their width */
+.media_grid > *:nth-child(n + 3) {
+    transform: translateX(-25%);
+}
+
+/* ==========================================================================
+   Section dividers — tan bar bleeding off the right edge
+   ========================================================================== */
+
+.page_section {
+    display: block;
+    position: relative;
+    font-family: var(--font-family-3);
+    font-weight: 700;
+    /* sits between the card headings and the Call of Duty game names */
+    font-size: clamp(24px, 0.85vw + 20px, 38px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bar-text-color);
+    background-color: transparent;
+    line-height: 1;
+    /* Optically centred rather than mathematically: with line-height 1 the caps
+       sit ~0.21em above the box's middle (all the slack is descender space the
+       uppercase text never uses), so the top padding carries that much more. */
+    padding: 0.34em 16px 0.13em 16px;
+    /* bleed to exactly the viewport's right edge — body is max-width 1180px and
+       centred, and .main sits 20px inside it, so the gap is 50vw - 570px once
+       the page is wider than the content column, and 20px below that. */
+    margin: 14px calc(-1 * max(20px, 50vw - 570px)) 34px 0;
+    overflow: visible;
+}
+
+/* Full-height orange block behind the label. It stays a pseudo-element rather
+   than a plain background so it can carry the right-edge bleed on its own. */
+.page_section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--link-color);
+    z-index: -1;
 }
 
 .page_section::after {
-    content: "";
+    content: none;
+}
+
+/* ==========================================================================
+   Misc
+   ========================================================================== */
+
+/* two images side by side, each taking half the panel's width */
+.row_dt_col_mob {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--media-gap);
+    padding: 12px 0 0 0;
+}
+
+.row_dt_col_mob .card_img2 {
+    padding-left: 0;
+    padding-right: 0;
     flex: 1;
-    height: 2px;
-    background-color: var(--text-color);
+    min-width: 0;
+}
+
+.footer {
+    padding: 24px var(--card-pad-x);
+    text-align: center;
+    font-family: var(--font-family-3);
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: var(--menu-color);
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media screen and (max-width: 760px) {
+    :root {
+        --top-padding: 16px;
+        --card-pad-x: 18px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* nav becomes the tan bar across the top, bleeding off the right edge and
+       pinned while the page scrolls */
+    #desktop_menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px 20px;
+        max-width: none;
+        width: auto;
+        margin: 0 0 22px 16px;
+        padding: 11px 16px;
+        background-color: var(--bar-color);
+        border-right: 0;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        align-self: auto;
+    }
+
+
+    #desktop_menu::before,
+    #desktop_menu::after {
+        display: none;
+    }
+
+    .desktop_menu_item,
+    .shadow-1, .shadow-2, .shadow-3, .shadow-4, .shadow-5 {
+        color: var(--bar-text-color);
+        margin: 0;
+        font-size: 15px;
+        letter-spacing: 0.08em;
+    }
+
+    .shadow-selected {
+        color: var(--highlight-color);
+    }
+
+    .desktop_menu_item:hover {
+        color: var(--bg-color);
+    }
+
+    .main {
+        margin: 0 16px 10px 16px;
+    }
+
+    .infocard {
+        flex-direction: column;
+    }
+
+    .card_body,
+    .card_img {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    /* featured cards stack: heading, blurb, then full-width artwork */
+    .infocard-featured {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .infocard-featured:has(.title-link):hover {
+        transform: none;
+        border-color: var(--rule-color-soft);
+    }
+
+    .card_body-featured,
+    .card_body-featured-dark {
+        width: 100%;
+        order: 1;
+    }
+
+    /* no artwork to overhang on mobile — titles stay inside the card */
+    .card_title-featured {
+        width: auto;
+        max-width: 100%;
+    }
+
+    /* Grid collapses to the single column everything else uses here. Top
+       margin is zero because .main is a flex column — margins don't collapse
+       there, so the intro card's own bottom margin would otherwise be added
+       to this one and show as a double gap above the first card. */
+    .card_grid {
+        grid-template-columns: 1fr;
+        row-gap: var(--card-gap);
+        margin-top: 0;
+    }
+
+    /* Titles take their natural height at this width instead of overflowing
+       upward. Stacked in one column there is no neighbouring card to stay
+       level with, and the overflow would otherwise need a full extra line of
+       row gap — which reads as dead space above every single-line title. */
+    .card_grid .card_title-featured {
+        display: block;
+        height: auto;
+    }
+
+    /* titles carry more of the page at this width */
+    .card_title-featured {
+        font-size: 27px;
+    }
+
+    .card_subtitle {
+        font-size: 22px;
+    }
+
+    /* artwork closing a panel sits on its bottom rule, with nothing under it */
+    .infofull > .card_body > .card_img2:last-child,
+    .infofull > .card_body > .row_dt_col_mob:last-child {
+        margin-bottom: calc(-1 * var(--card-pad-y));
+    }
+
+    /* artwork fills the card edge to edge and runs down to the bottom rule */
+    .card_img-featured {
+        position: relative;
+        width: auto;
+        height: auto;
+        order: 2;
+        margin: 18px 0 calc(-1 * var(--card-pad-y)) 0;
+        border: 0;
+    }
+
+    .card_img-featured .cardimg {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* stacked layout, so the fade runs top-to-bottom over the artwork's upper
+       edge instead of left-to-right as it does on desktop */
+    .card_img-featured::after {
+        content: "";
+        inset: 0;
+        background: linear-gradient(to bottom, var(--fade-stops));
+    }
+
+    .row_dt_col_mob {
+        flex-direction: column;
+    }
+
+    /* artwork drops below its panel and the gallery stacks, alternating
+       indent left/right down the column */
+    .section_row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section_row > .infofull,
+    .section_row > .infocard,
+    .section_row > .infocard-intro {
+        width: auto;
+    }
+
+    /* Artwork runs wider than the column, overlaps the bottom of its panel,
+       and alternates which edge it bleeds off — so the stack reads as a
+       staggered column rather than a neat list. */
+    .section_media {
+        width: auto;
+        margin: -22px 0 0 0;
+    }
+
+    .section_media > img,
+    .section_media > video {
+        margin-left: 14%;
+        margin-right: -8%;
+    }
+
+    .section_media-stack {
+        gap: 6px;
+    }
+
+    .section_media-stack > *:nth-child(even) {
+        margin-left: -8%;
+        margin-right: 14%;
+    }
+
+    /* stacked on mobile — nothing overlaps, so the copy gets its width back */
+    .section_row:has(> .section_media) .card_text {
+        padding-right: var(--card-pad-x);
+    }
+
+    .media_grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: auto;
+        margin: 0 0 var(--card-gap) 0;
+    }
+
+    /* must match the desktop stagger's specificity to actually override it */
+    .media_grid > *:nth-child(n + 3) {
+        transform: none;
+    }
+
+    .media_grid > *:nth-child(odd) {
+        margin: 0 -8% 0 14%;
+    }
+
+    .media_grid > *:nth-child(even) {
+        margin: 0 14% 0 -8%;
+    }
+
+    /* section dividers are desktop-only */
+    .page_section {
+        display: none;
+    }
+    
+    .title-main {
+        font-size: 1.5em;
+        color: var(--link-color);
+        line-height: 1.1;
+    }
 }

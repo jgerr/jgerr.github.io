@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Black Ops 6</title>
         <link rel="icon" href="../favicon_io/android-chrome-192x192.png" type="image/png">
@@ -16,106 +17,123 @@
     </head>
 
 <body>
-    <main>             
+    <main>
         <div id="desktop_menu">
-            <a class="menu-link" href="../game_design/work_experience.html"><div class="desktop_menu_item shadow-1">Work Experience</div></a>
-            <a class="menu-link" href="../programming/projects.html"><div class="desktop_menu_item shadow-3">Other Projects</div></a>
-            <a class="menu-link" href="../about-me.html"><div class="desktop_menu_item shadow-4">About Me</div></a>
             <a class="menu-link" href="/"><div class="desktop_menu_item shadow-5">Home</div></a>
+            <a class="menu-link" href="../game_design/work_experience.html"><div class="desktop_menu_item shadow-1 shadow-selected">Games</div></a>
+            <a class="menu-link" href="../programming/projects.html"><div class="desktop_menu_item shadow-3">Projects</div></a>
+            <a class="menu-link" href="../about-me.html"><div class="desktop_menu_item shadow-4">About Me</div></a>
         </div>
-    
-        <div class="main">            
-            <div class="infofull shadow-static tag-1">
-                <div class="card_body">
-                    <div class="card_subtitle"> <span>Call of Duty: Black Ops 6 </span></div>
+
+        <div class="main">
+            <div class="section_row">
+                <div class="infofull infocard-intro shadow-static tag-1">
+                    <div class="card_body">
+                        <div class="card_subtitle"> <span>Black Ops 6 </span></div>
+                            <div class="card_text">
+                                Game Designer on the Zombies team, responsible for:
+                                <ul>
+                                    <li>Design &amp; implementation of Main Quest on <b>Reckoning</b> (season 5.5)</li>
+                                    <li>Design &amp; implementation of Pack-A-Punch Quest, fast travel, 6 Easter Eggs, and character-focused Side Quest on <b>Citadelle des Morts</b> (season 1.5)</li>
+                                    <li>Implementation &amp; partial design of the Zombies <b>Training Course</b></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_row" id="reckoning">
+                <div class="infofull shadow-static tag-1">
+                    <div class="card_body">
+                        <div class="card_subtitle"><span>Reckoning</span></div>
                         <div class="card_text">
-                            Game Designer on the Zombies team, responsible for:
+                            I designed and implemented the <a href="https://www.youtube.com/watch?v=pcAAZW4G3fc&amp;t=748s"><b>Main Quest</b></a> of <b>Reckoning</b>, the final Zombies map in BO6. The Main Quest is a multi-hour sequence of hidden puzzles and combat encounters that players must solve to uncover narrative beats and reach the Boss Fight. My responsibilities included:
                             <ul>
-                                <li>Design & implementation of Main Quest on Reckoning (season 5.5)</li>
-                                <li>Design & implementation of Pack-A-Punch Quest, fast travel, 6 Easter Eggs, and character-focused Side Quest on Citadelle des Morts (season 1.5)</li>
-                                <li>Implementation & partial design of the Zombies Training Course</li>
+                                <li>Coding unique gameplay mechanics like:</li>
+                                <ul>
+                                     <li>Transforming into a particle and moving in an accelerator beam</li>
+                                     <li>Pseudo-physics for a cart you maneuver under sprinklers to fill</li>
+                                     <li>Prophunt minigame with custom equipment used to catch runaways</li>
+                                </ul>
+                                <li>Designing a long, non-linear quest that would be fun to replay and optimize</li>
+                                <li>Organizing steps and writing guidance for the guided version of the quest</li>
+                                <li>Working across departments to perfect the quest's presentation</li>
                             </ul>
+                            Check out the Main Quest with guidance from where it begins at the timestamp <a href="https://www.youtube.com/watch?v=pcAAZW4G3fc&amp;t=748s"><b>in this link</b></a>, up until the Boss Fight.
+                        </div>
                     </div>
+                </div>
+                <div class="section_media section_media-stack">
+                    <video src="../clips/bo6_reck_lab_beam.mp4" autoplay loop muted playsinline aria-label="Transforming into a particle and travelling through the accelerator beam"></video>
+                    <video src="../clips/bo6_reck_bucket_punch.mp4" autoplay loop muted playsinline aria-label="Punching the bucket along the floor and steering it under the sprinklers to fill"></video>
+                    <video src="../clips/bo6_reck_prophunt_capture.mp4" autoplay loop muted playsinline aria-label="Throwing the vacuum seal device at floating props in the prophunt minigame"></video>
                 </div>
             </div>
 
-            <div class="infofull shadow-static tag-1" id="reckoning">
-                <div class="card_body">   
-                    <div class="card_subtitle"><span>Reckoning</span></div>
-                    <div class="card_text">      
-                        I designed and implemented the Main Quest of Reckoning, the final Zombies map in BO6. The Main Quest is a multi-hour sequence of hidden puzzles and combat encounters that players must solve to uncover narrative beats and reach the Boss Fight. My responsibilities included:
-                        <ul>
-                            <li>Coding unique gameplay mechanics like:</li>
-                            <ul>
-                                 <li>Transforming into a particle and moving in an accelerator beam</li>
-                                 <li>Pseudo-physics for a cart you maneuver under sprinklers to fill</li>
-                                 <li>Prophunt minigame with custom equipment used to catch runaways</li> 
-                            </ul>
-                            <li>Designing a long, non-linear quest that would be fun to replay and optimize</li>
-                            <li>Organizing steps and writing guidance for the guided version of the quest</li>
-                            <li>Working across departments to perfect the quest's presentation</li>
-                        </ul>                 
-                        Check out the Main Quest with guidance from where it begins at the timestamp below, up until the Boss Fight.
+            <div class="section_row" id="citadelle">
+                <div class="infofull shadow-static tag-1">
+                    <div class="card_body">
+                        <div class="card_subtitle"><span>Citadelle des Morts</span></div>
+                        <div class="card_text">
+                            On <b>Citadelle des Morts</b>, I designed and implemented the <a href="https://www.youtube.com/watch?v=CbkYTci0VBw"><b>Pack-A-Punch quest</b></a>. This is a guided quest players complete to unlock weapon upgrades. For this quest, I worked with animators to create a crankable cannon that rotates both pitch and yaw, and scripted a combat encounter that empowers a variety of skill levels and playstyles.
+                        </div>
                     </div>
-                    
-                     <iframe src="https://www.youtube.com/embed/pcAAZW4G3fc?si=LBz4uURkpKXA2-UH&amp;start=748" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+                <div class="section_media"><video src="../clips/bo6_cita_pap_cannon.mp4" autoplay loop muted playsinline aria-label="Cranking the cannon to rotate it in pitch and yaw"></video></div>
             </div>
-            
-            <!-- <div class="infofull shadow-static tag-1">
-                <div class="card_body">
-                    <div class="card_img2"> <img src="allsfair_03.png" class="cardimg" ></div>
+
+            <div class="section_row" id="maya">
+                <div class="infofull shadow-static tag-1">
+                    <div class="card_body">
+                        <div class="card_text">
+                            I also implemented and tuned the <a href="https://www.youtube.com/watch?v=OoBroRhLoLU"><b>Maya's Revenge Side Quest</b></a>, where a solo player fights their way through a scripted, cinematic experience. I worked with Creative to plan out what the crucial points were for dialogue to play during this quest, and with Cinematics to script a seamless transition from gameplay into the ending IGC.
+                        </div>
+                    </div>
                 </div>
-            </div>             -->
-
-            <div class="infofull shadow-static tag-1" id="citadelle">
-                <div class="card_body">   
-            
-                    <div class="card_subtitle"><span>Citadelle des Morts</span></div>
-                    <div class="card_text">                            
-                        On Citadelle des Morts, I designed and implemented the Pack-A-Punch quest. This is a guided quest players complete to unlock weapon upgrades. For this quest, I worked with animators to create a crankable cannon that rotates both pitch and yaw, and scripted a combat encounter that empowers a variety of skill levels and playstyles.
-                        <!-- <ul>
-                            <li>Designing a short quest with memorable moments that avoids feeling tedious when replayed</li>
-                            <li>/li>
-                         </ul> -->
-                    </div>
-                    <iframe src="https://www.youtube.com/embed/CbkYTci0VBw?si=0thn-8Sps9EL-YFG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                    <div class="card_text" id="maya"> <br>                            
-                        I also implemented and tuned the Maya's Revenge Side Quest, where a solo player fights their way through a scripted, cinematic experience. I worked with Creative to plan out what the crucial points were for dialogue to play during this quest, and with Cinematics to script a seamless transition from gameplay into the ending IGC.
-                    </div>
-                    <iframe src="https://www.youtube.com/embed/OoBroRhLoLU?si=n-VtWtHik6ynLGfC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                    <div class="card_text"> <br>                           
-                        I was responsible for designing and implementing 6 Easter Eggs on Citadelle. One I loved working on was the Bartending Easter Egg, where a player serves drinks to zombie patrons in Diner Dash fashion. I ensured this minigame could support 1-4 players so it could be played in co-op with friends, and chose to reward a specific perk that wasn't available for purchase on the map to enable that playstyle.
-                    </div>
-                    <iframe src="https://www.youtube.com/embed/_SXwzu4L5lI?si=ST9oDK74ycc-tJwN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    
-                    <div class="card_text"><br>                            
-                        I designed and implemented the Cannon Fasttravel, where players climb into the Lion Cannon and launch back to spawn. I added additional flight paths to increase its utility, and used script to frame the player climbing inside in 3rd person, so players could appreciate the fiction of being cannonballed out.
-                    </div>
-                    <iframe src="https://www.youtube.com/embed/KDEYPaL67A8?si=Nowg3b6qYX_wUPpt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+                <div class="section_media"><video src="../clips/bo6_cita_maya_door_to_blast.mp4" autoplay loop muted playsinline aria-label="Opening the locked door, descending the stairs, and the transition into the cutscene ending in the explosion"></video></div>
             </div>
-                
-            <div class="infofull shadow-static tag-1" id="training">
-                <div class="card_body">
-                    <div class="card_subtitle"> <span>Training Course</span></div>
-                    <div class="card_text">
-                        I implemented and partially designed the Zombies Training Course, which teaches new players the basics of how to play the Round Based Zombies mode. I also ported over the Lua-based UI from the Multiplayer Training Course, hooked up VO that guides the player, and wrote text instructions for each step. 
-                    </div>   
-                    <iframe src="https://www.youtube-nocookie.com/embed/K00SjwvVY68?si=HsX5To83Nq2tW7iC" referrerpolicy="strict-origin-when-cross-origin" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            <div class="section_row">
+                <div class="infofull shadow-static tag-1">
+                    <div class="card_body">
+                        <div class="card_text">
+                            I was responsible for designing and implementing 6 Easter Eggs on <b>Citadelle</b>. One I loved working on was the <a href="https://www.youtube.com/watch?v=_SXwzu4L5lI"><b>Bartending Easter Egg</b></a>, where a player serves drinks to zombie patrons in Diner Dash fashion. I ensured this minigame could support 1-4 players so it could be played in co-op with friends, and chose to reward a specific perk that wasn't available for purchase on the map to enable that playstyle.
+                        </div>
+                    </div>
                 </div>
-            </div>            
+                <div class="section_media"><video src="../clips/bo6_cita_bartender.mp4" autoplay loop muted playsinline aria-label="Serving drinks to zombie patrons in the Bartending Easter Egg"></video></div>
+            </div>
+
+            <div class="section_row">
+                <div class="infofull shadow-static tag-1">
+                    <div class="card_body">
+                        <div class="card_text">
+                            I designed and implemented the <a href="https://www.youtube.com/watch?v=KDEYPaL67A8"><b>Cannon Fasttravel</b></a>, where players climb into the Lion Cannon and launch back to spawn. I added additional flight paths to increase its utility, and used script to frame the player climbing inside in 3rd person, so players could appreciate the fiction of being cannonballed out.
+                        </div>
+                    </div>
+                </div>
+                <div class="section_media"><video src="../clips/bo6_cita_cannon_fasttravel.mp4" autoplay loop muted playsinline aria-label="Climbing into the Lion Cannon and launching back to spawn"></video></div>
+            </div>
+
+            <div class="section_row" id="training">
+                <div class="infofull shadow-static tag-1">
+                    <div class="card_body">
+                        <div class="card_subtitle"> <span>Training Course</span></div>
+                        <div class="card_text">
+                            I implemented and partially designed the <a href="https://www.youtube.com/watch?v=K00SjwvVY68"><b>Zombies Training Course</b></a>, which teaches new players the basics of how to play the Round Based Zombies mode. I also ported over the Lua-based UI from the Multiplayer Training Course, hooked up VO that guides the player, and wrote text instructions for each step.
+                        </div>
+                    </div>
+                </div>
+                <div class="section_media"><video src="../clips/bo6_training_course.mp4" autoplay loop muted playsinline aria-label="Guided combat step in the Zombies Training Course"></video></div>
+            </div>
 
             <div class="footer">
             ©2026 Joanna Gerr
             </div>
-       
+
 
         </div>
     </main>
 
 </body>
 </html>
-

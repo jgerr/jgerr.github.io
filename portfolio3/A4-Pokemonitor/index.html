@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title>Pokemonitor</title>
+
+    <!--including d3 library via CDN url-->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!--including our own stylin'-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="title">
+      <div id="title_fill">
+        PokeMonitor
+      </div>
+      <div id="title_outline">
+        PokeMonitor
+      </div>
+      <div id="names">
+        Joanna Gerr and Jenny Zhang<br />
+        6.894 Spring 2020
+      </div>
+    </div>
+
+    <div id="map">
+      <img id="kanto_map" src="images/kanto_map_pixel_large.png" />
+      <object
+        id="kanto_overlay"
+        data="images/kanto_overlay.svg"
+        type="image/svg+xml"
+        class="selector_outline"
+      ></object>
+      <img id="player_icon" src="images/player_icon_anim.gif" />
+    </div>
+
+    <div id="description">
+      <span class="whiteblue"
+        >What will a new trainer encounter on their <br />journey in Pokemon
+        Red's Kanto region?</span
+      ><br />
+      <span class="blueshade"
+        >+ Monitor progression with buttons to<br />
+        &nbsp;&nbsp;Step Forward/Backward, Play, & Rewind<br />
+        + View a region's spawn rates by selecting it on the map<br />
+        + Learn more about Pokemon by hovering over bar chart<br
+      /></span>
+    </div>
+
+    <div id="buttons">
+      <input
+        id="back_button"
+        type="image"
+        src="images/button_back.png"
+        class="controls"
+        onmousedown="prev_locale();"
+      />
+      <input
+        id="play_button"
+        type="image"
+        src="images/button_play.png"
+        class="controls"
+        onmousedown="play_locales(); toggle_play();"
+      />
+      <input
+        id="fwd_button"
+        type="image"
+        src="images/button_fwd.png"
+        class="controls"
+        onmousedown="next_locale();"
+      />
+      <input
+        id="rewind_button"
+        type="image"
+        src="images/button_rewind.png"
+        class="controls"
+        onmousedown="goto_locale(0);"
+      />
+    </div>
+
+    <div id="info_dump">
+      <div class="center">
+        <span id="region_name">Pallet Town</span><br />
+        <div id="blurb"></div>
+        <div id="spawn_chart"></div>
+        <div id="helpful">
+          <div id="legend">
+            <table>
+                <tr>
+                    <td>
+                        <span class="inline">
+                            <span id="land" class="dot"></span> Spawns on land
+                          </span><br />
+                    </td>
+                    <td>
+                        <span class="inline">
+                            <span id="fish" class="dot"></span> Spawns fishing 
+                          </span><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="inline">
+                            <span id="cave" class="dot"></span> Spawns in cave
+                          </span><br />
+                    </td>
+                    <td>
+                        <span class="inline">
+                            <span id="surf" class="dot"></span> Spawns surfing
+                          </span><br />   
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2>           
+                        <span class="inline">
+                        <span id="special" class="dot"></span> Special encounter (gift,
+                        legendary, etc.)
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <!-- <span class="inline">
+              <span id="land" class="dot"></span> Spawns on land
+            </span><br />
+            <span class="inline">
+                <span id="cave" class="dot"></span> Spawns in cave
+              </span><br />
+            <span class="inline">
+              <span id="fish" class="dot"></span> Spawns from fishing 
+            </span><br />
+            <span class="inline">
+              <span id="surf" class="dot"></span> Spawns from surfing
+            </span><br />            
+            <span class="inline">
+              <span id="special" class="dot"></span> Special encounter (gift,
+              legendary, etc.)
+            </span> -->
+          </div>
+          <div class="tooltip" id="tooltipContainer">
+            <div id="tooltipContent" class="tooltiptext2">
+              <!-- populated under scripts.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="region_tooltip" class="tooltip_region">
+        Pallet Town
+    </div>
+
+    <script src="localeInfo.js"></script>
+    <script src="localeCoordinates.js"></script>
+    <script src="scripts.js"></script>
+    <!--including our own scripts; 
+                                                                        placed at end of body so HTML elements exist by the time we ref.-->
+  </body>
+</html>
